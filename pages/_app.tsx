@@ -1,5 +1,5 @@
-import Footer from "@/layout/footer/Footer";
 import Header from "@/layout/header/Header";
+import Footer from "@/layout/footer/Footer";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 
