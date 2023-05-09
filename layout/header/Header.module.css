@@ -27,6 +27,8 @@
   font-family: 'DM-Batonishvili';
   color: var(--text-color-primary);
   font-size: 40px;
+  font-weight: 400;
+  line-height: 121px;
   white-space: nowrap;
 }
 

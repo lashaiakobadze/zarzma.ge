@@ -34,7 +34,11 @@ const Header: React.FC = () => {
         </div>
 
         <div className={style.header__item}>
-          <NavigationItem href="/galleria" label="გალერია" dropdownItems={dropdownItems} />
+          <NavigationItem
+            href="/galleria"
+            label="გალერია"
+            dropdownItems={dropdownItems}
+          />
         </div>
 
         <div className={style.header__item}>
@@ -42,7 +46,9 @@ const Header: React.FC = () => {
         </div>
 
         <div className={`${style.header__item} ${style.header__itemCenter}`}>
-          <a className={style.header__title} href='/'>ზარზმის მამათა მონასტერი</a>
+          <a href="/">
+            <h1 className={style.header__title}>ზარზმის მამათა მონასტერი</h1>
+          </a>
         </div>
 
         <div className={style.header__item}>

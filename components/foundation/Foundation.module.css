@@ -17,7 +17,7 @@
   display: flex;
 }
 
-.foundation__title h1 {
+.foundation__title h2{
   font-family: "DM-Batonishvili";
   color: var(--text-color-primary);
   font-weight: 400;

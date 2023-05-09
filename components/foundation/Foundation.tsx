@@ -6,7 +6,7 @@ export default function Foundation() {
     <div className={style.foundation}>
       <div className={style.foundationContainer}>
         <div className={style.foundation__title}>
-          <h1>მონასტრის მხარდამჭერი საქველმმოქმედო ფონდი</h1>
+          <h2>მონასტრის მხარდამჭერი საქველმმოქმედო ფონდი</h2>
           <Image
             src="/main_assets/savane.svg"
             alt="play-button"

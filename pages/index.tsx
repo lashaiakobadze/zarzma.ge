@@ -1,4 +1,5 @@
 import SlickSlider from "@/components/slickSlider/SlickSlider";
+import { NextPage } from "next";
 import Head from "next/head";
 
 const images = [
@@ -7,7 +8,7 @@ const images = [
   "../slider_assets/slider3.png",
 ];
 
-export default function Home() {
+const Home: NextPage = () => {
   return (
     <>
       <Head>
@@ -20,3 +21,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home;

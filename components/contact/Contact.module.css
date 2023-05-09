@@ -9,3 +9,46 @@
   width: 100%;
   height: 478px;
 }
+
+.contactContent {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 33px;
+  padding-bottom: 60px;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contactItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contactItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 33px;
+}
+
+.contactItem span {
+  margin-left: 10px;
+}
+
+.link {
+  color: blue;
+  text-decoration: underline;
+  margin-left: 10px;
+}

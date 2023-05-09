@@ -1,0 +1,48 @@
+.formGroup {
+  width: 422px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.formGroup input,
+.formGroup textarea {
+  padding: 10px 16px;
+  font-family: "Helvetica Neue";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11.5px;
+  line-height: 14px;
+  color: rgba(32, 32, 32, 0.6);
+  background-color: #fff;
+  border: 0.5px solid var(--color-dark);
+  margin-bottom: 11px;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.formGroup textarea {
+  resize: none;
+  min-height: 127px;
+}
+
+.formGroup button {
+  width: max-content;
+  padding: 10px 20px;
+  background-color: var(--bg-color-accent);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Helvetica Neue";
+  font-weight: 400;
+  font-size: 11.5px;
+  line-height: 14px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.formGroup button:hover {
+  background-color: var(--bg-color-highlight);
+}
