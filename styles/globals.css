@@ -31,6 +31,7 @@
   --btn-secondary: rgb(13, 13, 13);
   --btn-primary: rgb(217, 0, 0);
   --color-dark: rgb(16, 16, 16);
+  --border-color: #F5F5F5;
 }
 
 
@@ -53,6 +54,10 @@ ul, li {
 
 a {
   text-decoration: none;
+}
+
+.fontHelvetica {
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
 .slick-dots {

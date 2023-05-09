@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
           height={23}
         />
         <Link
-          href={"/foundation"}
+          href={"/contact"}
           key={"© 2023 ზარზმის მამათა მონასტერი"}
           legacyBehavior
         >
@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
             </a>
           </li>
           <li>
-            <Link href={"/foundation"} key={"კონტაქტი"} legacyBehavior>
+            <Link href={"/contact"} key={"კონტაქტი"} legacyBehavior>
               <a>{"კონტაქტი"}</a>
             </Link>
           </li>

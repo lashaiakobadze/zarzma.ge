@@ -1,0 +1,53 @@
+.foundation {
+  padding: 50px 100px;
+  border-top: 2px solid var(--border-color);
+}
+
+.foundationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 90px;
+  padding-bottom: 100px;
+  border: 2px solid var(--border-color);
+}
+
+.foundation__title {
+  display: flex;
+}
+
+.foundation__title h1 {
+  font-family: "DM-Batonishvili";
+  color: var(--text-color-primary);
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 76px;
+  opacity: 0.9;
+  margin-right: 15px;
+}
+
+.foundation__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 21px 0;
+}
+
+.foundation__content__item {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11.5px;
+  line-height: 16px;
+  color: var(--text-color-primary);
+  opacity: 0.95;
+  margin: 7px 0;
+}
+
+.foundation__content__gap {
+  width: 61px;
+  height: 1px;
+  background-color:  var(--text-color-primary);
+  opacity: 0.15;
+}
