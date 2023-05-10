@@ -19,7 +19,7 @@ const Videos: React.FC<VideosProps> = ({ videos }) => {
         <VideoPlayer
           videoId={getYoutubeId(videos[0]?.videoURL)}
           width="100%"
-          height="478px"
+          height="578px"
         />
       )}
 

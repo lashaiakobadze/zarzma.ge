@@ -7,10 +7,10 @@ const dropdownItems: {
   label: string;
   href: string;
 }[] = [
-  { label: "ფოტოები", href: "galleria/photos" },
-  { label: "ვიდეოები", href: "galleria/videos" },
-  { label: "ფრესკები", href: "galleria/chants" },
-  { label: "ხატები", href: "galleria/icons" },
+  { label: "ფოტოები", href: "/galleria/photos" },
+  { label: "ვიდეოები", href: "/galleria/videos" },
+  { label: "ფრესკები", href: "/galleria/chants" },
+  { label: "ხატები", href: "/galleria/icons" },
 ];
 
 const Header: React.FC = () => {
