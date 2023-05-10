@@ -33,6 +33,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  margin-left: 20px;
 }
 
 .contactItem {
@@ -43,12 +44,13 @@
   margin-bottom: 33px;
 }
 
-.contactItem span {
+.contactItem span, .contactItem a {
   margin-left: 10px;
+  color: var(--text-color-primary);
 }
 
-.link {
-  color: blue;
+a.link {
+  color: rgb(0, 0, 255);
   text-decoration: underline;
   margin-left: 10px;
 }

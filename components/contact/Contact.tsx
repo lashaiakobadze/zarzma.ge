@@ -63,7 +63,7 @@ export default function Contact() {
               width={15}
               height={11}
             />
-            <span>gio.khutsishvili@gmail.com</span>
+            <a href="mailto:gio.khutsishvili@gmail.com">gio.khutsishvili@gmail.com</a>
           </div>
 
           <div className={style.contactItem}>
@@ -73,7 +73,7 @@ export default function Contact() {
               width={15}
               height={15}
             />
-            <span>+995 595 95 78 88</span>
+            <a href="tel:+995595957888">+995 595 95 78 88</a>
           </div>
 
           <div className={style.contactItem}>
@@ -83,8 +83,8 @@ export default function Contact() {
               width={15}
               height={13}
             />
-            <a href="Telegram.me/giokh" className={style.link}>
-              Telegram.me/giokh
+            <a href="https://telegram.me/giokh" className={style.link}>
+              Telegram: @giokh
             </a>
           </div>
         </div>
