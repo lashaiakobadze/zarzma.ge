@@ -10,6 +10,7 @@
   font-family: "DM-Batonishvili";
   color: var(--text-color-primary);
   opacity: 0.9;
+  white-space: nowrap;
   font-weight: 400;
   font-size: 25px;
   line-height: 76px;

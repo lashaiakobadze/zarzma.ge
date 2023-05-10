@@ -21,7 +21,7 @@ const NavigationItem: React.FC<NavigationItemProps> = ({
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const isActive = router.asPath === href;
+  const isActive = (router.asPath).includes(href);
 
   const handleMouseEnter = () => {
     setIsDropdownOpen(true);
@@ -35,7 +35,7 @@ const NavigationItem: React.FC<NavigationItemProps> = ({
     <>
       {!dropdownItems?.length && (
         <Link href={href} legacyBehavior>
-          <a className={`${style.navItem} ${isActive ? "active" : ""}`}>
+          <a className={`${style.navItem} ${isActive ? `${style.active}` : ""}`}>
             {label}
           </a>
         </Link>
@@ -45,7 +45,7 @@ const NavigationItem: React.FC<NavigationItemProps> = ({
         <div className={style.navItemWrapper}>
           <Link href={href} legacyBehavior>
             <a
-              className={`${style.navItem} ${isActive ? "active" : ""}`}
+              className={`${style.navItem} ${isActive ? `${style.active}` : ""}`}
               onMouseEnter={handleMouseEnter}
             >
               {label}

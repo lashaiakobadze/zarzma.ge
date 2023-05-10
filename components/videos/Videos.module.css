@@ -1,0 +1,13 @@
+.videoItems {
+  padding: 0 118px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 47px;
+}
+
+.videoItem {
+  min-width: 595px;
+}
