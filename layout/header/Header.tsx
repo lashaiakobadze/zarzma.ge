@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import style from "./Header.module.css";
 import NavigationItem from "@/components/shared/navItem/NavItem";
+import Link from "next/link";
 
 const dropdownItems: {
   label: string;
@@ -16,12 +17,14 @@ const dropdownItems: {
 const Header: React.FC = () => {
   return (
     <header className={style.header}>
-      <Image
-        src="../main_assets/logo-zarzma.svg"
-        alt="logo-zarzma"
-        width={43}
-        height={47}
-      />
+      <a href="/">
+        <Image
+          src="../main_assets/logo-zarzma.svg"
+          alt="logo-zarzma"
+          width={43}
+          height={47}
+        />
+      </a>
 
       <nav className={style.header__container}>
         <div className={style.header__item}>
@@ -46,9 +49,9 @@ const Header: React.FC = () => {
         </div>
 
         <div className={`${style.header__item} ${style.header__itemCenter}`}>
-          <a href="/">
+          <Link href={"/"} legacyBehavior>
             <h1 className={style.header__title}>ზარზმის მამათა მონასტერი</h1>
-          </a>
+          </Link>
         </div>
 
         <div className={style.header__item}>
