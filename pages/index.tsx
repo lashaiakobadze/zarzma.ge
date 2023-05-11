@@ -1,14 +1,22 @@
-import SlickSlider from "@/components/slickSlider/SlickSlider";
+import Home from "@/components/home/Home";
 import { NextPage } from "next";
 import Head from "next/head";
+import { useEffect, useState } from "react";
+import getArticles from "./api/articlesApi";
+import { Article } from "./models/article.interface";
+import { DocType } from "./models/docType.enum";
 
-const images = [
-  "../slider_assets/slider1.png",
-  "../slider_assets/slider2.png",
-  "../slider_assets/slider3.png",
-];
+const HomePage: NextPage = () => {
+  const [articles, setArticles] = useState<Article[]>([]);
 
-const Home: NextPage = () => {
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await getArticles(DocType.eparchy);
+      setArticles(data);
+    };
+    fetchData();
+  }, []);
+
   return (
     <>
       <Head>
@@ -17,9 +25,10 @@ const Home: NextPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/main_assets/logo-zarzma.svg" />
       </Head>
-      <SlickSlider images={images} />
+
+      {articles.length && <Home articles={articles} />}
     </>
   );
-}
+};
 
-export default Home;
+export default HomePage;

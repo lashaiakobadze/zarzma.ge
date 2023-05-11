@@ -1,0 +1,9 @@
+.about {
+  width: 100%;
+  padding: 64px 93px;
+  border: 1px solid rgba(32, 32, 32, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}

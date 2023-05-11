@@ -29,8 +29,8 @@ const Videos: React.FC<VideosProps> = ({ videos }) => {
 
       {videos && (
         <div className={style.videoItems}>
-          {videos.map((video) => (
-            <div className={style.videoItem}>
+          {videos.slice(1, videos.length).map((video) => (
+            <div key={video.id} className={style.videoItem}>
               <PageTitle title={video.name} paddingLeft={0} />
               <VideoPlayer
                 key={video.id}

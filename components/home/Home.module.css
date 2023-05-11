@@ -1,0 +1,10 @@
+.aboutContainer {
+  padding: 50px 61px 76px 61px;
+}
+
+.aboutItems {
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  margin-top: 30px;
+}

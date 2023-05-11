@@ -14,7 +14,7 @@ const VideosPage: NextPage = () => {
       setVideos(data);
     };
     fetchData();
-  }, [])
+  }, []);
 
   return <Videos videos={videos} />;
 };
