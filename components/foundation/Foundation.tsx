@@ -9,7 +9,7 @@ export default function Foundation() {
           <h2>მონასტრის მხარდამჭერი საქველმმოქმედო ფონდი</h2>
           <Image
             src="/main_assets/savane.svg"
-            alt="play-button"
+            alt="savane"
             width={96}
             height={89}
           />

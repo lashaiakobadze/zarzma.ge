@@ -30,11 +30,7 @@ export default function Contact() {
   });
 
   if (!isLoaded) {
-    return (
-      <div className={style.contactMap}>
-        <p>Loading...</p>
-      </div>
-    );
+    return <div className={style.contactMap}>Loading...</div>;
   }
 
   return (
@@ -59,17 +55,19 @@ export default function Contact() {
           <div className={style.contactItem}>
             <Image
               src="../main_assets/email-icon.svg"
-              alt="play-button"
+              alt="email-icon"
               width={15}
               height={11}
             />
-            <a href="mailto:gio.khutsishvili@gmail.com">gio.khutsishvili@gmail.com</a>
+            <a href="mailto:gio.khutsishvili@gmail.com">
+              gio.khutsishvili@gmail.com
+            </a>
           </div>
 
           <div className={style.contactItem}>
             <Image
               src="../main_assets/phone-icon.svg"
-              alt="play-button"
+              alt="phone-icon"
               width={15}
               height={15}
             />
@@ -79,12 +77,32 @@ export default function Contact() {
           <div className={style.contactItem}>
             <Image
               src="../main_assets/telegram-icon.svg"
-              alt="play-button"
+              alt="telegram-icon"
               width={15}
               height={13}
             />
-            <a href="https://telegram.me/giokh" className={style.link}>
+            <a
+              href="https://telegram.me/giokh"
+              target="_blank"
+              className={style.link}
+            >
               Telegram: @giokh
+            </a>
+          </div>
+
+          <div className={style.contactItem}>
+            <Image
+              src="../main_assets/Wikipedia.svg"
+              alt="Wikipedia"
+              width={20}
+              height={20}
+            />
+            <a
+              href="https://en.wikipedia.org/wiki/Zarzma_monastery?fbclid=IwAR2aESkXOFPaiOVE51d89b4hrzC8ZA0ySOJgRrSXzeTko2n8Nsqe4JLrdDU"
+              target="_blank"
+              className={style.link}
+            >
+              Wikipedia
             </a>
           </div>
         </div>
