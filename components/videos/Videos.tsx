@@ -16,11 +16,13 @@ const Videos: React.FC<VideosProps> = ({ videos }) => {
   return (
     <>
       {videos && (
-        <VideoPlayer
-          videoId={getYoutubeId(videos[0]?.videoURL)}
-          width="100%"
-          height="578px"
-        />
+        <div className={style.mainVideo}>
+          <VideoPlayer
+            videoId={getYoutubeId(videos[0]?.videoURL)}
+            width="100%"
+            height="578px"
+          />
+        </div>
       )}
 
       <PageTitle title={"ვიდეოები"} paddingLeft={118} />

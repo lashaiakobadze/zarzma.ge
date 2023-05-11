@@ -1,4 +1,9 @@
+.mainVideo {
+  min-height: 578px;
+}
+
 .videoItems {
+  min-height: 440px;
   padding: 0 118px;
   display: flex;
   align-items: center;
