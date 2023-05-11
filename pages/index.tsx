@@ -8,11 +8,14 @@ import { DocType } from "./models/docType.enum";
 
 const HomePage: NextPage = () => {
   const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const data = await getArticles(DocType.eparchy);
       setArticles(data);
+      // console.log('data', data);
+      setLoading(false);
     };
     fetchData();
   }, []);
@@ -26,7 +29,7 @@ const HomePage: NextPage = () => {
         <link rel="icon" href="/main_assets/logo-zarzma.svg" />
       </Head>
 
-      {articles.length && <Home articles={articles} />}
+      <Home articles={articles} loading={loading} />
     </>
   );
 };

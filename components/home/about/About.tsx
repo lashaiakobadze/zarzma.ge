@@ -7,7 +7,6 @@ interface ArticlesProps {
 }
 
 const About: React.FC<ArticlesProps> = ({ articles }) => {
-  console.log('articles', articles);
   return (
     <>
       <div className={style.about}>
