@@ -14,7 +14,6 @@ const HomePage: NextPage = () => {
     const fetchData = async () => {
       const data = await getArticles(DocType.eparchy);
       setArticles(data);
-      // console.log('data', data);
       setLoading(false);
     };
     fetchData();
