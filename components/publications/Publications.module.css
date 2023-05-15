@@ -1,0 +1,9 @@
+.publicationsContainer {
+  padding: 56px 120px;
+  gap: 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+

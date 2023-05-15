@@ -1,0 +1,35 @@
+.publicationsItem {
+  position: relative;
+  padding: 93px 133px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  border: 1px solid rgba(32, 32, 32, 0.15)
+}
+
+.publicationsItem:hover {
+  background: #D9D9D9;
+}
+
+.publicationsItem h2 {
+  position: absolute;
+  top: -40px;
+  left: 45%;
+  white-space: nowrap;
+  font-family: "DM-Batonishvili";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 76px;
+  color: rgba(32, 32, 32, 0.9);
+  background-color: var(--bg-color-primary);
+  padding: 0 5px;
+}
+
+.publicationsItem p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+  color: rgba(32, 32, 32, 0.9);
+}

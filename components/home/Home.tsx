@@ -1,5 +1,4 @@
 import { Article } from "@/pages/models/article.interface";
-import Image from "next/image";
 import Loader from "../shared/loader/Loader";
 import PageTitle from "../shared/page-title/PageTitle";
 import SlickSlider from "../slickSlider/SlickSlider";
@@ -14,9 +13,9 @@ const images = [
 ];
 
 const videos = [
-  '',
-  ''
-]
+  "https://www.youtube.com/watch?v=IT7y1wsz1Vs&ab_channel=ManjiTV",
+  "https://www.youtube.com/watch?v=Xd6PpZxmaPU&ab_channel=2030Official",
+];
 
 interface ArticlesProps {
   articles: Article[];
@@ -64,19 +63,24 @@ const Home: React.FC<ArticlesProps> = ({ articles, loading }) => {
       <div className={style.videos}>
         <VideoPlayer
           key={videos[0]}
-          videoId={videos[0]}
+          videoId={getYoutubeId(videos[0])}
           width="100%"
           height="309px"
         />
         <VideoPlayer
-          key={videos[0]}
-          videoId={videos[0]}
+          key={videos[1]}
+          videoId={getYoutubeId(videos[1])}
           width="100%"
           height="309px"
         />
       </div>
     </>
   );
+};
+
+const getYoutubeId = (url: string) => {
+  const match = url?.match(/(?:youtu.be\/|youtube.com\/watch\?v=)([\w-]+)/i);
+  return match ? match[1] : "";
 };
 
 export default Home;
