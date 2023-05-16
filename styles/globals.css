@@ -31,9 +31,8 @@
   --btn-secondary: rgb(13, 13, 13);
   --btn-primary: rgb(217, 0, 0);
   --color-dark: rgb(16, 16, 16);
-  --border-color: #F5F5F5;
+  --border-color: #f5f5f5;
 }
-
 
 * {
   box-sizing: border-box;
@@ -41,14 +40,16 @@
   padding: 0;
   outline: none;
   border: none;
-  font-family: 'mrgvlovani', sans-serif;
+  font-family: "mrgvlovani", sans-serif;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
-ul, li {
+ul,
+li {
   list-style: none;
 }
 
@@ -57,9 +58,10 @@ a {
 }
 
 .fontHelvetica {
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
+/* specific styles for react-h5-audio-player react-slick */
 .slick-dots {
   bottom: 25px !important;
 }
@@ -76,4 +78,86 @@ a {
 .slick-dots li.slick-active button:before {
   opacity: 1 !important;
   color: #fff !important;
+}
+
+/* specific styles for react-h5-audio-player third-party */
+.rhap_container {
+  background-color: var(--bg-color-primary) !important;
+}
+
+.rhap_container:hover {
+  background-color: rgba(243, 14, 0, 1) !important;
+}
+
+.rhap_container:hover .rhap_progress-bar {
+  background-color: rgba(243, 14, 0, 1) !important;
+}
+
+.rhap_container:hover .rhap_progress-filled {
+  background: var(--bg-color-primary) !important;
+}
+
+.rhap_container:hover .rhap_main-controls-button {
+  color: var(--bg-color-primary) !important;
+}
+
+.rhap_main-controls-button {
+  color: rgba(195, 195, 195, 0.75) !important;
+}
+
+.rhap_container:hover .rhap_time {
+  color: rgba(248, 248, 248, 0.9) !important;
+}
+
+.rhap_time {
+  font-size: 12px !important;
+  color: rgba(32, 32, 32, 0.9) !important;
+}
+
+.rhap_container:hover .rhap_progress-bar {
+  border: 1px solid #f8f8f8;
+}
+
+.rhap_progress-bar {
+  height: 7px !important;
+  border-radius: 0 !important;
+  border: 1px solid rgba(217, 217, 217, 0.5);
+  background: var(--bg-color-primary) !important;
+}
+
+.rhap_progress-indicator {
+  display: none !important;
+}
+
+.rhap_container {
+  box-shadow: none !important;
+  border: 0.5px solid rgba(217, 217, 217, 0.5) !important;
+}
+
+.rhap_progress-filled {
+  background-color: rgba(243, 14, 0, 1) !important;
+  border-radius: 0 !important;
+}
+
+.rhap_volume-controls,
+.rhap_additional-controls {
+  display: none !important;
+}
+
+.rhap_main {
+  flex-direction: row-reverse !important;
+}
+
+.rhap_play-pause-button {
+  font-size: 24px !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.rhap_controls-section {
+  flex: none !important;
+}
+
+.rhap_controls-section {
+  margin: 0 !important;
 }

@@ -1,4 +1,5 @@
 import { Article } from "@/pages/models/article.interface";
+import Link from "next/link";
 import Loader from "../shared/loader/Loader";
 import PageTitle from "../shared/page-title/PageTitle";
 import SlickSlider from "../slickSlider/SlickSlider";
@@ -41,25 +42,27 @@ const Home: React.FC<ArticlesProps> = ({ articles, loading }) => {
         </div>
       </div>
 
-      <div className={style.icons}>
-        <img
-          src="/main_assets/png/home-icon-1.png"
-          alt="home-icon-1"
-          width="100%"
-          height="534"
-          loading="lazy"
-          decoding="async"
-        />
-        <img
-          src="/main_assets/png/home-icon-2.png"
-          alt="home-icon-2"
-          width="100%"
-          height="534"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-
+      <Link href={"/frescoes"} legacyBehavior>
+        <div className={style.icons}>
+          <img
+            src="/main_assets/png/home-icon-1.png"
+            alt="home-icon-1"
+            width="100%"
+            height="534"
+            loading="lazy"
+            decoding="async"
+          />
+          <img
+            src="/main_assets/png/home-icon-2.png"
+            alt="home-icon-2"
+            width="100%"
+            height="534"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </Link>
+      
       <div className={style.videos}>
         <VideoPlayer
           key={videos[0]}
