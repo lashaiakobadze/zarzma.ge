@@ -1,4 +1,4 @@
-.aboutItem {
+.IconsItem {
   position: relative;
   padding: 93px 133px;
   display: flex;
@@ -7,11 +7,11 @@
   border: 1px solid rgba(32, 32, 32, 0.15)
 }
 
-.aboutItem:hover {
+.IconsItem:hover {
   background: rgba(217, 217, 217, 0.45);
 }
 
-.aboutItem h2 {
+.IconsItem h2 {
   position: absolute;
   top: -40px;
   left: 45%;
@@ -26,7 +26,7 @@
   padding: 0 5px;
 }
 
-.aboutItem p {
+.IconsItem p {
   font-style: normal;
   font-weight: 400;
   font-size: 11px;

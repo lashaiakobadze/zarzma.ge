@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import getArticles from "../api/articlesApi";
+import { Article } from "../models/article.interface";
+import { DocType } from "../models/docType.enum";
 import Icons from "@/components/icons/Icons";
-import { Article } from "./models/article.interface";
-import getArticles from "./api/articlesApi";
-import { DocType } from "./models/docType.enum";
+
 
 export default function FoundationPage() {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -10,7 +11,7 @@ export default function FoundationPage() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getArticles(DocType.publication);
+      const data = await getArticles(DocType.icons);
       setArticles(data);
       setLoading(false);
     };
