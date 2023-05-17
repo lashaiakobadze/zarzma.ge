@@ -10,7 +10,16 @@ interface FrescoesProps {
 const Frescoes: React.FC<FrescoesProps> = ({ frescoes, loading }) => {
   return (
     <>
-      <img className={style.frescoesImg} src="/main_assets/png/frescoes.png" alt="frescoes"/>
+      <div className={style.frescoes}>
+        <div className={style.frescoesHead}>
+          <h2 className={style.frescoesTitle}>ფრესკები</h2>
+          <img
+            className={style.frescoesImg}
+            src="/main_assets/png/frescoes.png"
+            alt="frescoes"
+          />
+        </div>
+      </div>
     </>
   );
 };

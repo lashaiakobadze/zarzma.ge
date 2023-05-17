@@ -1,5 +1,30 @@
+.frescoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.frescoesHead {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.frescoesTitle {
+  position: absolute;
+  font-family: "DM-Batonishvili";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 100px;
+  line-height: 303px;
+  text-align: center;
+  color: rgba(226, 226, 226, 0.9);
+}
+
 .frescoesImg {
-  max-width: max-content;
   width: 100%;
   height: auto;
 }
