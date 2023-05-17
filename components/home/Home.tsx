@@ -42,25 +42,8 @@ const Home: React.FC<ArticlesProps> = ({ articles, loading }) => {
         </div>
       </div>
 
-      <Link href={"/frescoes"} legacyBehavior>
-        <div className={style.icons}>
-          <img
-            src="/main_assets/png/home-icon-1.png"
-            alt="home-icon-1"
-            width="100%"
-            height="534"
-            loading="lazy"
-            decoding="async"
-          />
-          <img
-            src="/main_assets/png/home-icon-2.png"
-            alt="home-icon-2"
-            width="100%"
-            height="534"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
+      <Link href={"/galleria/frescoes"} legacyBehavior>
+        <img className={style.frescoesImg} src="/main_assets/png/Mural-Images.png" alt="frescoes"/>
       </Link>
       
       <div className={style.videos}>
