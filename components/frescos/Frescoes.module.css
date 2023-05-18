@@ -13,6 +13,11 @@
   justify-content: center;
 }
 
+.frescoesItems {
+  width: 100%;
+  display: flex;
+}
+
 .frescoesTitle {
   position: absolute;
   font-family: "DM-Batonishvili";
@@ -25,6 +30,6 @@
 }
 
 .frescoesImg {
-  width: 100%;
+  width: 50%;
   height: auto;
 }
