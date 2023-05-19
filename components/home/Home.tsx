@@ -26,7 +26,9 @@ interface ArticlesProps {
 const Home: React.FC<ArticlesProps> = ({ articles, loading }) => {
   return (
     <>
-      <SlickSlider images={images} />
+      <div className="main-slider">
+        <SlickSlider images={images} />
+      </div>
       <PageTitle title={"შესახებ"} paddingLeft={111} />
 
       <div className={style.aboutContainer}>
@@ -43,9 +45,13 @@ const Home: React.FC<ArticlesProps> = ({ articles, loading }) => {
       </div>
 
       <Link href={"/galleria/frescoes"} legacyBehavior>
-        <img className={style.frescoesImg} src="/main_assets/png/Mural-Images.png" alt="frescoes"/>
+        <img
+          className={style.frescoesImg}
+          src="/main_assets/png/Mural-Images.png"
+          alt="frescoes"
+        />
       </Link>
-      
+
       <div className={style.videos}>
         <VideoPlayer
           key={videos[0]}

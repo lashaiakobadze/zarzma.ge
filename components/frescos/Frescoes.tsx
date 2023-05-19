@@ -1,6 +1,6 @@
 import { AlbumItem } from "@/pages/models/albumItem.interface";
 import Loader from "../shared/loader/Loader";
-import SliderWithPreview from "../shared/SliderWithPreview/SliderWithPreview";
+import ElasticCarouselSlider from "../shared/ElasticCarouselSlider/ElasticCarouselSlider";
 import style from "./Frescoes.module.css";
 
 interface FrescoesProps {
@@ -32,7 +32,9 @@ const Frescoes: React.FC<FrescoesProps> = ({ frescoesAlbum, loading }) => {
       {loading ? (
         <Loader />
       ) : (
-        <SliderWithPreview images={frescoesAlbum.albumPhotos} navigation={true} />
+        <div className="frescos-slider">
+          <ElasticCarouselSlider slides={frescoesAlbum.albumPhotos} />
+        </div>
       )}
     </>
   );

@@ -1,16 +1,26 @@
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import styles from './ElasticCarouselSlider.module.css';
+import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import styles from "./ElasticCarouselSlider.module.css";
+import { AlbumPhoto } from "@/pages/models/albumPhoto.interface";
 
 interface ElasticCarouselSliderProps {
-  slides: string[]; // Array of slide image URLs
+  slides: AlbumPhoto[];
 }
 
-const ElasticCarouselSlider: React.FC<ElasticCarouselSliderProps> = ({ slides }) => {
+const inlineStyles = {
+  paddingBottom: "40%",
+};
+
+const BASE_URL = process.env.dataUrl + "/";
+
+const ElasticCarouselSlider: React.FC<ElasticCarouselSliderProps> = ({
+  slides,
+}) => {
   const settings = {
-    dots: true,
+    arrows: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -30,9 +40,12 @@ const ElasticCarouselSlider: React.FC<ElasticCarouselSliderProps> = ({ slides })
   return (
     <div className={styles.sliderContainer}>
       <Slider {...settings}>
-        {slides.map((slide, index) => (
-          <div className={styles.slide} key={index}>
-            <img src={slide} alt={`Slide ${index + 1}`} />
+        {slides.map((image: AlbumPhoto) => (
+          <div key={image.photoName} className={styles.slide} style={inlineStyles}>
+            <img
+              src={`${BASE_URL}${image.photoURL}`}
+              alt={`Slide ${image.name} ${image.id}`}
+            />
           </div>
         ))}
       </Slider>

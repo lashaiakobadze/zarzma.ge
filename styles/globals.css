@@ -62,11 +62,11 @@ a {
 }
 
 /* specific styles for react-h5-audio-player react-slick */
-.slick-dots {
+.main-slider .slick-dots {
   bottom: 25px !important;
 }
 
-.slick-next {
+.main-slider .slick-next {
   display: none !important;
 }
 
@@ -78,6 +78,53 @@ a {
 .slick-dots li.slick-active button:before {
   opacity: 1 !important;
   color: #fff !important;
+}
+
+.frescos-slider .slick-next {
+  position: absolute;
+  right: 47px !important;
+  width: 58px;
+  height: 58px;
+  background: url("/main_assets/SwiperArrowRight.svg");
+}
+
+.frescos-slider .slick-next::before {
+  display: none;
+}
+
+.frescos-slider .slick-next:hover,
+.frescos-slider .slick-next:focus,
+.frescos-slider .slick-next:hover,
+.frescos-slider .slick-next:focus {
+  color: none;
+  outline: none;
+  background: none;
+  border-radius: 50%;
+  background: url("/main_assets/SwiperArrowRight.svg");
+}
+
+.frescos-slider .slick-prev {
+  position: absolute;
+  z-index: 10;
+  left: 47px !important;
+  width: 58px;
+  height: 58px;
+  background: url("/main_assets/SwiperArrowLeft.svg");
+}
+
+.frescos-slider .slick-prev::before {
+  display: none;
+}
+
+.frescos-slider .slick-prev:hover,
+.frescos-slider .slick-prev:focus,
+.frescos-slider .slick-prev:hover,
+.frescos-slider .slick-prev:focus {
+  /* color: none;
+  outline: none;
+  background: none; */
+  border-radius: 50%;
+  background: url("/main_assets/SwiperArrowLeft.svg");
 }
 
 /* specific styles for react-h5-audio-player third-party */
@@ -160,29 +207,4 @@ a {
 
 .rhap_controls-section {
   margin: 0 !important;
-}
-
-/* specific styles for swiper third-party */
-.swiper-slide-active {
-  width: 627px !important;
-}
-
-.swiper-button-prev {
-  background-image: url('/main_assets/SwiperArrowLeft.svg');
-  z-index: 1;
-  position: absolute;
-  top: 40%;
-  width: 58px;
-  height: 58px;
-  left: 40px;
-}
-
-.swiper-button-next {
-  background-image: url('/main_assets/SwiperArrowRight.svg');
-  z-index: 1;
-  position: absolute;
-  top: 40%;
-  width: 58px;
-  height: 58px;
-  right: 40px;
 }
