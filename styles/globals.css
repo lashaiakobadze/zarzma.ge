@@ -166,3 +166,23 @@ a {
 .swiper-slide-active {
   width: 627px !important;
 }
+
+.swiper-button-prev {
+  background-image: url('/main_assets/SwiperArrowLeft.svg');
+  z-index: 1;
+  position: absolute;
+  top: 40%;
+  width: 58px;
+  height: 58px;
+  left: 40px;
+}
+
+.swiper-button-next {
+  background-image: url('/main_assets/SwiperArrowRight.svg');
+  z-index: 1;
+  position: absolute;
+  top: 40%;
+  width: 58px;
+  height: 58px;
+  right: 40px;
+}

@@ -32,7 +32,7 @@ const Frescoes: React.FC<FrescoesProps> = ({ frescoesAlbum, loading }) => {
       {loading ? (
         <Loader />
       ) : (
-        <SliderWithPreview images={frescoesAlbum.albumPhotos} />
+        <SliderWithPreview images={frescoesAlbum.albumPhotos} navigation={true} />
       )}
     </>
   );
