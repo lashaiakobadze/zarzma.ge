@@ -161,3 +161,8 @@ a {
 .rhap_controls-section {
   margin: 0 !important;
 }
+
+/* specific styles for swiper third-party */
+.swiper-slide-active {
+  width: 627px !important;
+}

@@ -1,19 +1,14 @@
-import { Article } from "@/pages/models/article.interface";
-import InfinitySlider from "../shared/infinitySlider/InfinitySlider";
+import { AlbumItem } from "@/pages/models/albumItem.interface";
+import Loader from "../shared/loader/Loader";
+import SliderWithPreview from "../shared/SliderWithPreview/SliderWithPreview";
 import style from "./Frescoes.module.css";
 
-const slideImages = [
-  "../slider_assets/slider1.png",
-  "../slider_assets/slider2.png",
-  "../slider_assets/slider3.png",
-];
-
 interface FrescoesProps {
-  frescoes: Article[];
+  frescoesAlbum: AlbumItem;
   loading: boolean;
 }
 
-const Frescoes: React.FC<FrescoesProps> = ({ frescoes, loading }) => {
+const Frescoes: React.FC<FrescoesProps> = ({ frescoesAlbum, loading }) => {
   return (
     <>
       <div className={style.frescoes}>
@@ -32,9 +27,13 @@ const Frescoes: React.FC<FrescoesProps> = ({ frescoes, loading }) => {
             />
           </div>
         </div>
-
-        <InfinitySlider slides={slideImages} />
       </div>
+
+      {loading ? (
+        <Loader />
+      ) : (
+        <SliderWithPreview images={frescoesAlbum.albumPhotos} />
+      )}
     </>
   );
 };

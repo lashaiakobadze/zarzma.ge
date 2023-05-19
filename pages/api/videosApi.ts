@@ -1,8 +1,6 @@
 const getVideos = async () => {
   try {
-    const response = await fetch(
-      "https://zarzmaapi.azurewebsites.net/api/Videos/VideoData"
-    );
+    const response = await fetch(`${process.env.dataUrl}/api/Videos/VideoData`);
 
     if (!response.ok) {
       throw new Error("Failed to fetch videos");

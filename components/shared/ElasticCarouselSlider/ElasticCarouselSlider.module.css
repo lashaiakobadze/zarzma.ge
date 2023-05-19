@@ -1,0 +1,13 @@
+.sliderContainer {
+  max-width: 800px; /* Adjust the max-width as needed */
+  margin: 0 auto;
+}
+
+.slide {
+  outline: none;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}

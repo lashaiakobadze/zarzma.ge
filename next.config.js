@@ -9,6 +9,10 @@ const nextConfig = {
   images: {
     domains: ['zarzmaapi.azurewebsites.net'],
   },
+  styles: [
+    'swiper/css/navigation.min.css',
+    // Other CSS files or modules used in your project...
+  ],
 };
 
 module.exports = nextConfig;
