@@ -1,7 +1,7 @@
 import Loader from "@/components/shared/loader/Loader";
 import { Article } from "@/pages/models/article.interface";
 import style from "./Publications.module.css";
-import PublicationsItem from "./publications-item/Publications";
+import PublicationsItem from "./publications-item/PublicationsItem";
 
 interface ArticlesProps {
   articles: Article[];

@@ -23,13 +23,13 @@ const ElasticCarouselSlider: React.FC<ElasticCarouselSliderProps> = ({
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     centerMode: true,
     variableWidth: true,
     responsive: [
       {
-        breakpoint: 1400,
+        breakpoint: 2000,
         settings: {
           slidesToShow: 1,
         },

@@ -23,7 +23,7 @@
   line-height: 76px;
   color: rgba(32, 32, 32, 0.9);
   background-color: var(--bg-color-primary);
-  padding: 0 5px;
+  padding: 0 10px;
 }
 
 .publicationsItem p {
@@ -32,4 +32,13 @@
   font-size: 11px;
   line-height: 15px;
   color: rgba(32, 32, 32, 0.9);
+}
+
+.publicationsItem__withoutText {
+  width: 100%;
+}
+
+.publicationsItem__withoutText img {
+  width: 100%;
+  height: auto;
 }

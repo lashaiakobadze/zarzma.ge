@@ -13,14 +13,20 @@ const PublicationsItem: React.FC<ArticleProps> = ({ article }) => {
 
   return (
     <>
-      <div className={style.publicationsItem}>
-        {article?.photoUrl && BASE_URL && (
+      {article?.text !== "*" ? (
+        <div className={style.publicationsItem}>
           <Image src={imgUrl} alt={article?.title} width={225} height={289} />
-        )}
-
-        <h2>{article?.title}</h2>
-        <p dangerouslySetInnerHTML={{ __html: article?.text }}></p>
-      </div>
+          <h2>{article?.title}</h2>
+          <p dangerouslySetInnerHTML={{ __html: article?.text }}></p>
+        </div>
+      ) : (
+        <div
+          className={`${style.publicationsItem} ${style.publicationsItem__withoutText}`}
+        >
+          <img src={imgUrl} alt={article?.title} />
+          <h2>{article?.title}</h2>
+        </div>
+      )}
     </>
   );
 };
