@@ -3,15 +3,15 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./AlbumsSlider.module.css";
-import { AlbumPhoto } from "@/pages/models/albumPhoto.interface";
+import { Album } from "@/pages/models/album.interface";
 
 interface AlbumsSliderProps {
-  slides: AlbumPhoto[];
+  albums: Album[];
 }
 
 const BASE_URL = process.env.dataUrl + "/";
 
-const AlbumsSlider: React.FC<AlbumsSliderProps> = ({ slides }) => {
+const AlbumsSlider: React.FC<AlbumsSliderProps> = ({ albums }) => {
   const settings = {
     arrows: true,
     dots: false,
@@ -34,15 +34,15 @@ const AlbumsSlider: React.FC<AlbumsSliderProps> = ({ slides }) => {
   return (
     <div className={styles.sliderContainer}>
       <Slider {...settings}>
-        {slides.map((image: AlbumPhoto) => (
-          <div key={image.photoName} className={styles.slide}>
+        {albums.map((album: Album) => (
+          <div key={album.id} className={styles.slide}>
             <div className={styles.overlay}>
-              <h3 className={styles.albumTitle}>ზარზმობა</h3>
+              <h3 className={styles.albumTitle}>{album.name}</h3>
             </div>
             <img
               className={styles.albumImg}
-              src={`${BASE_URL}${image.photoURL}`}
-              alt={`Slide ${image.name} ${image.id}`}
+              src={`${BASE_URL}${album.albumItems[0].albumPhotos[0]?.photoURL}`}
+              alt={`Slide ${album.albumItems[0].albumPhotos[0]?.name} ${album.albumItems[0].albumPhotos[0]?.id}`}
             />
           </div>
         ))}

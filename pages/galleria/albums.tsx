@@ -1,5 +1,6 @@
 import Albums from "@/components/albums/Albums";
 import React, { useEffect, useState } from "react";
+import getAlbumPhotoURL from "../api/albumPhotoUrlApi";
 import getAlbums from "../api/albumsApi";
 import { Album } from "../models/album.interface";
 
@@ -10,13 +11,17 @@ const AlbumsPage: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data: {albums: Album[] } = await getAlbums();
-      setAlbums(data.albums);
+
+      let albums = data?.albums.map((album: Album)=> {
+        return album;
+      });
+      setAlbums(albums);
       setLoading(false);
     };
     fetchData();
   }, []);
 
-  return <Albums Albums={albums} loading={loading} />;
+  return <Albums albums={albums} loading={loading} />;
 };
 
 export default AlbumsPage;

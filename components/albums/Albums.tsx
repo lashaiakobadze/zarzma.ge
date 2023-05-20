@@ -5,11 +5,11 @@ import PageTitle from "../shared/page-title/PageTitle";
 import AlbumsSlider from "./albumsSlider/AlbumsSlider";
 
 interface AlbumsProps {
-  Albums: Album[];
+  albums: Album[];
   loading: boolean;
 }
 
-const Albums: React.FC<AlbumsProps> = ({ Albums, loading }) => {
+const Albums: React.FC<AlbumsProps> = ({ albums, loading }) => {
   return (
     <>
       <div className={style.albums}>
@@ -37,7 +37,7 @@ const Albums: React.FC<AlbumsProps> = ({ Albums, loading }) => {
           ) : (
             <div className="albums-slider">
               <AlbumsSlider
-                slides={Albums[0].albumItems[0].albumPhotos}
+                albums={albums}
               />
             </div>
           )}
