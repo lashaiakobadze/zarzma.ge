@@ -9,15 +9,9 @@ interface AlbumsSliderProps {
   slides: AlbumPhoto[];
 }
 
-const inlineStyles = {
-  paddingBottom: "30%",
-};
-
 const BASE_URL = process.env.dataUrl + "/";
 
-const AlbumsSlider: React.FC<AlbumsSliderProps> = ({
-  slides,
-}) => {
+const AlbumsSlider: React.FC<AlbumsSliderProps> = ({ slides }) => {
   const settings = {
     arrows: true,
     dots: false,
@@ -41,8 +35,12 @@ const AlbumsSlider: React.FC<AlbumsSliderProps> = ({
     <div className={styles.sliderContainer}>
       <Slider {...settings}>
         {slides.map((image: AlbumPhoto) => (
-          <div key={image.photoName} className={styles.slide} style={inlineStyles}>
+          <div key={image.photoName} className={styles.slide}>
+            <div className={styles.overlay}>
+              <h3 className={styles.albumTitle}>ზარზმობა</h3>
+            </div>
             <img
+              className={styles.albumImg}
               src={`${BASE_URL}${image.photoURL}`}
               alt={`Slide ${image.name} ${image.id}`}
             />

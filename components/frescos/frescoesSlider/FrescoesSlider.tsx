@@ -9,10 +9,6 @@ interface FrescoesSliderProps {
   slides: AlbumPhoto[];
 }
 
-const inlineStyles = {
-  paddingBottom: "40%",
-};
-
 const BASE_URL = process.env.dataUrl + "/";
 
 const FrescoesSlider: React.FC<FrescoesSliderProps> = ({
@@ -41,7 +37,7 @@ const FrescoesSlider: React.FC<FrescoesSliderProps> = ({
     <div className={styles.sliderContainer}>
       <Slider {...settings}>
         {slides.map((image: AlbumPhoto) => (
-          <div key={image.photoName} className={styles.slide} style={inlineStyles}>
+          <div key={image.photoName} className={styles.slide}>
             <img
               src={`${BASE_URL}${image.photoURL}`}
               alt={`Slide ${image.name} ${image.id}`}

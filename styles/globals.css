@@ -200,14 +200,6 @@ a {
   object-fit: cover;
 }
 
-.albums-slider .slick-slide {
-  background: rgba(0, 0, 0, 0.35);
-}
-
-.albums-slider .slick-slide:hover {
-  background: rgba(0, 0, 0, 0.6);
-}
-
 /* specific styles for "react-h5-audio-player" third-party */
 .rhap_container {
   background-color: var(--bg-color-primary) !important;
