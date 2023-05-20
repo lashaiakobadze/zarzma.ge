@@ -8,7 +8,7 @@ const dropdownItems: {
   label: string;
   href: string;
 }[] = [
-  { label: "ფოტოები", href: "/galleria/photos" },
+  { label: "ფოტოები", href: "/galleria/albums" },
   { label: "ვიდეოები", href: "/galleria/videos" },
   { label: "ფრესკები", href: "/galleria/frescoes" },
   { label: "ხატები", href: "/galleria/icons" },

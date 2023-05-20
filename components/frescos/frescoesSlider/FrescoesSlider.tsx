@@ -2,10 +2,10 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from "./ElasticCarouselSlider.module.css";
+import styles from "./FrescoesSlider.module.css";
 import { AlbumPhoto } from "@/pages/models/albumPhoto.interface";
 
-interface ElasticCarouselSliderProps {
+interface FrescoesSliderProps {
   slides: AlbumPhoto[];
 }
 
@@ -15,7 +15,7 @@ const inlineStyles = {
 
 const BASE_URL = process.env.dataUrl + "/";
 
-const ElasticCarouselSlider: React.FC<ElasticCarouselSliderProps> = ({
+const FrescoesSlider: React.FC<FrescoesSliderProps> = ({
   slides,
 }) => {
   const settings = {
@@ -53,4 +53,4 @@ const ElasticCarouselSlider: React.FC<ElasticCarouselSliderProps> = ({
   );
 };
 
-export default ElasticCarouselSlider;
+export default FrescoesSlider;
