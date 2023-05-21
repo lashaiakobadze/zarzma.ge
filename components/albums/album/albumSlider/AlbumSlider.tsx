@@ -2,18 +2,16 @@ import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styles from "./AlbumsSlider.module.css";
-import { Album } from "@/pages/models/album.interface";
+import styles from "./AlbumSlider.module.css";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { AlbumItem } from "@/pages/models/albumItem.interface";
 
 interface AlbumsSliderProps {
-  albums: Album[];
+  baseUrl: string;
+  albumItems: AlbumItem[];
 }
 
-const BASE_URL = process.env.dataUrl + "/";
-
-const AlbumsSlider: React.FC<AlbumsSliderProps> = ({ albums }) => {
+const AlbumSlider: React.FC<AlbumsSliderProps> = ({ baseUrl, albumItems }) => {
   const settings = {
     arrows: true,
     dots: false,
@@ -36,18 +34,18 @@ const AlbumsSlider: React.FC<AlbumsSliderProps> = ({ albums }) => {
   return (
     <div className={styles.sliderContainer}>
       <Slider {...settings}>
-        {albums.map((album: Album) => (
-          <div key={album.id} className={styles.slide}>
-            <Link href={`/galleria/albums/${album.id}`} legacyBehavior>
+        {albumItems.map((albumItem: AlbumItem) => (
+          <div key={albumItem.id} className={styles.slide}>
+            <Link href={`/galleria/albums/albumItem/${albumItem.id}`} legacyBehavior>
               <div className={styles.overlay}>
-                <h3 className={styles.albumTitle}>{album.name}</h3>
+                <h3 className={styles.albumTitle}>{albumItem.name}</h3>
               </div>
             </Link>
 
             <img
               className={styles.albumImg}
-              src={`${BASE_URL}${album.albumItems[0].albumPhotos[0]?.photoURL}`}
-              alt={`Slide ${album.albumItems[0].albumPhotos[0]?.name} ${album.albumItems[0].albumPhotos[0]?.id}`}
+              src={`${baseUrl}${albumItem.albumPhotos[0]?.photoURL}`}
+              alt={`Slide ${albumItem.albumPhotos[0]?.name} ${albumItem.albumPhotos[0]?.id}`}
             />
           </div>
         ))}
@@ -56,4 +54,4 @@ const AlbumsSlider: React.FC<AlbumsSliderProps> = ({ albums }) => {
   );
 };
 
-export default AlbumsSlider;
+export default AlbumSlider;

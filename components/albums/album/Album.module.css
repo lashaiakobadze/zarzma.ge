@@ -1,0 +1,21 @@
+.album {
+  margin: auto;
+}
+
+.albumSlider {
+  margin: 0 auto;
+  padding: 28px;
+  max-width: 1200px;
+}
+
+@media (max-width: 1240px) {
+  .albumSlider {
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 940px) {
+  .albumSlider {
+    max-width: 700px;
+  }
+}

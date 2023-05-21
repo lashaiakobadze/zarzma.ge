@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.overlay {
+/* .overlay {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -20,9 +20,9 @@
 
 .overlay:hover {
   background: rgba(0, 0, 0, 0);
-}
+} */
 
-.albumTitle {
+.slideTitle {
   position: absolute;
   top: 30%;
   font-family: 'DM-Batonishvili';
@@ -33,8 +33,8 @@
   color: var(--bg-color-primary);
 }
 
-.albumImg {
+.slideImg {
   width: 100%;
-  height: 427px;
+  height: 155px;
 }
 
