@@ -1,5 +1,4 @@
 import * as Item from "@/pages/models/albumItem.interface";
-import Loader from "@/components/shared/loader/Loader";
 import style from "./AlbumItem.module.css";
 import SlickSlider from "@/components/slickSlider/SlickSlider";
 import AlbumItemSlider from "./albumItemSlider/AlbumItemSlider";
@@ -8,10 +7,9 @@ const BASE_URL = process.env.dataUrl + "/";
 
 interface AlbumItemProps {
   albumItem: Item.AlbumItem;
-  loading: boolean;
 }
 
-const AlbumItem: React.FC<AlbumItemProps> = ({ albumItem, loading }) => {
+const AlbumItem: React.FC<AlbumItemProps> = ({ albumItem }) => {
   return (
     <>
       <div className={style.albumItem}>
@@ -30,13 +28,9 @@ const AlbumItem: React.FC<AlbumItemProps> = ({ albumItem, loading }) => {
         </div>
 
         <div className={style.albumItemSlider}>
-          {loading ? (
-            <Loader />
-          ) : (
-            <div className="albums-slider album-item-slider">
-              <AlbumItemSlider baseUrl={BASE_URL} albumItem={albumItem} />
-            </div>
-          )}
+          <div className="albums-slider album-item-slider">
+            <AlbumItemSlider baseUrl={BASE_URL} albumItem={albumItem} />
+          </div>
         </div>
       </div>
     </>

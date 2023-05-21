@@ -19,7 +19,7 @@ const Header: React.FC = () => {
     <header className={style.header}>
       <a href="/">
         <Image
-          src="../main_assets/logo-zarzma.svg"
+          src="/main_assets/logo-zarzma.svg"
           alt="logo-zarzma"
           width={43}
           height={47}
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
       <nav className={style.header__container}>
         <div className={style.header__item}>
           <Image
-            src="../main_assets/Play-button-Patriarch-Illia.svg"
+            src="/main_assets/Play-button-Patriarch-Illia.svg"
             alt="play-button"
             width={24}
             height={24}

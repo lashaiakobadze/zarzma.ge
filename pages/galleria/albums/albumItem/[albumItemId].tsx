@@ -1,4 +1,5 @@
 import AlbumItem from "@/components/albums/album/albumItem/AlbumItem";
+import Loader from "@/components/shared/loader/Loader";
 import getAlbumItem from "@/pages/api/albumItemApi";
 import * as Item from "@/pages/models/albumItem.interface";
 import { useRouter } from "next/router";
@@ -9,14 +10,13 @@ const albumItemPage = () => {
   const { albumItemId } = router.query;
 
   const [albumItem, setAlbumItem] = useState<Item.AlbumItem>();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async (albumItemId: string) => {
-      const albumItem: { albumItem: Item.AlbumItem[] } = await getAlbumItem(albumItemId);
+      const albumItem: { albumItem: Item.AlbumItem[] } = await getAlbumItem(
+        albumItemId
+      );
       setAlbumItem(albumItem.albumItem[0]);
-      console.log('albumItem.albumItem[0]', albumItem.albumItem[0]);
-      setLoading(false);
     };
     if (albumItemId) {
       console.log(albumItemId);
@@ -24,9 +24,7 @@ const albumItemPage = () => {
     }
   }, []);
 
-  return (
-    <>{albumItem && <AlbumItem albumItem={albumItem!} loading={loading} />}</>
-  );
+  return <>{albumItem ? <AlbumItem albumItem={albumItem!} /> : <Loader />}</>;
 };
 
 export default albumItemPage;

@@ -1,4 +1,5 @@
 import CurrentAlbum from "@/components/albums/album/Album";
+import Loader from "@/components/shared/loader/Loader";
 import getAlbums from "@/pages/api/albumsApi";
 import { Album } from "@/pages/models/album.interface";
 import { useRouter } from "next/router";
@@ -9,24 +10,27 @@ const albumPage = () => {
   const { albumId } = router.query;
 
   const [album, setAlbum] = useState<Album>();
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const data: { albums: Album[] } = await getAlbums();
-
-      let album = data?.albums.find((album: Album) => {
-        return album.id === +albumId!;
-      });
-      setAlbum(album);
-      console.log("album", album);
-      setLoading(false);
+      const foundAlbum = data?.albums.find((album: Album) => album.id === +albumId!);
+      setAlbum(foundAlbum);
     };
-    fetchData();
-  }, []);
+
+    if (!album && albumId) {
+      fetchData();
+    }
+  }, [albumId, album]);
 
   return (
-    <>{album && <CurrentAlbum album={album!} loading={loading} />}</>
+    <>
+      {album ? (
+        <CurrentAlbum album={album} />
+      ) : (
+        <Loader />
+      )}
+    </>
   );
 };
 

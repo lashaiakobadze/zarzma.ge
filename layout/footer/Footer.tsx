@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
 
       <div className={`${styles.column} ${styles.column__between}`}>
         <Image
-          src="../main_assets/cross.svg"
+          src="/main_assets/cross.svg"
           alt="cross"
           className={styles.column__img}
           width={13}
@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
           <li>
             <a href="#">
               <Image
-                src="../main_assets/facebook.svg"
+                src="/main_assets/facebook.svg"
                 alt="facebook"
                 width={19}
                 height={19}
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
           <li>
             <a href="#">
               <Image
-                src="../main_assets/youtube.svg"
+                src="/main_assets/youtube.svg"
                 alt="youtube"
                 width={19}
                 height={19}
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
           <li>
             <a href="#">
               <Image
-                src="../main_assets/youtube.svg"
+                src="/main_assets/youtube.svg"
                 alt="language"
                 width={19}
                 height={19}

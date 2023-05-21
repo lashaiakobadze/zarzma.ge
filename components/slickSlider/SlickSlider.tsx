@@ -4,6 +4,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import style from './SlickSlider.module.css';
 
+// https://react-slick.neostack.com/docs/example/center-mode/
+
 type SlickSliderProps = {
   images: string[];
   slidesToShow?: number;

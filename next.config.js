@@ -7,7 +7,7 @@ const nextConfig = {
     dataUrl: "https://zarzmaapi.azurewebsites.net",
   },
   images: {
-    domains: ["zarzmaapi.azurewebsites.net"],
+    domains: ["zarzmaapi.azurewebsites.net", "http://localhost:3000/"],
   },
 };
 

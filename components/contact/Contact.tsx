@@ -54,7 +54,7 @@ export default function Contact() {
         <div className={style.contactItems}>
           <div className={style.contactItem}>
             <Image
-              src="../main_assets/email-icon.svg"
+              src="/main_assets/email-icon.svg"
               alt="email-icon"
               width={15}
               height={11}
@@ -66,7 +66,7 @@ export default function Contact() {
 
           <div className={style.contactItem}>
             <Image
-              src="../main_assets/phone-icon.svg"
+              src="/main_assets/phone-icon.svg"
               alt="phone-icon"
               width={15}
               height={15}
@@ -76,7 +76,7 @@ export default function Contact() {
 
           <div className={style.contactItem}>
             <Image
-              src="../main_assets/telegram-icon.svg"
+              src="/main_assets/telegram-icon.svg"
               alt="telegram-icon"
               width={15}
               height={13}
@@ -92,7 +92,7 @@ export default function Contact() {
 
           <div className={style.contactItem}>
             <Image
-              src="../main_assets/Wikipedia.svg"
+              src="/main_assets/Wikipedia.svg"
               alt="Wikipedia"
               width={20}
               height={20}
