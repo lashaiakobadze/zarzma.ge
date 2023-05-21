@@ -14,7 +14,9 @@ const albumPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data: { albums: Album[] } = await getAlbums();
-      const foundAlbum = data?.albums.find((album: Album) => album.id === +albumId!);
+      const foundAlbum = data?.albums.find(
+        (album: Album) => album.id === +albumId!
+      );
       setAlbum(foundAlbum);
     };
 
@@ -23,15 +25,7 @@ const albumPage = () => {
     }
   }, [albumId, album]);
 
-  return (
-    <>
-      {album ? (
-        <CurrentAlbum album={album} />
-      ) : (
-        <Loader />
-      )}
-    </>
-  );
+  return <>{album ? <CurrentAlbum album={album} /> : <Loader />}</>;
 };
 
 export default albumPage;

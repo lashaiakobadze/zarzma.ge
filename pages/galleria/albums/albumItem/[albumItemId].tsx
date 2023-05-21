@@ -19,10 +19,9 @@ const albumItemPage = () => {
       setAlbumItem(albumItem.albumItem[0]);
     };
     if (albumItemId) {
-      console.log(albumItemId);
       fetchData("" + albumItemId);
     }
-  }, []);
+  }, [albumItemId, albumItem]);
 
   return <>{albumItem ? <AlbumItem albumItem={albumItem!} /> : <Loader />}</>;
 };

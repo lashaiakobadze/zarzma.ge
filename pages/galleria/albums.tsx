@@ -1,6 +1,5 @@
 import Albums from "@/components/albums/Albums";
 import React, { useEffect, useState } from "react";
-import getAlbumPhotoURL from "../api/albumPhotoUrlApi";
 import getAlbums from "../api/albumsApi";
 import { Album } from "../models/album.interface";
 
