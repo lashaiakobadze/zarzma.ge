@@ -28,10 +28,13 @@ const AlbumItemSlider: React.FC<AlbumsSliderProps> = ({
       );
     },
     dots: true,
+    // dotsClass: styles.slideContainer,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    // centerMode: true,
+    // centerPadding: "100px",
     responsive: [
       {
         breakpoint: 2000,
@@ -40,24 +43,27 @@ const AlbumItemSlider: React.FC<AlbumsSliderProps> = ({
           slidesToScroll: 1,
         },
       },
-    ]
+    ],
   };
   return (
-    <Slider {...settings}>
-      {albumItem.albumPhotos.map((albumPhoto: AlbumPhoto) => (
-        <div key={albumItem.id} className={styles.slide}>
-          <div className={styles.slideHead}>
-            <h2 className={styles.albumTitle}>{'ზარზმობა'}</h2>
-            <h3 className={styles.albumItemTitle}>{albumItem.name}</h3>
+    <>
+      <div className={styles.slideHead}>
+        <h2 className={styles.albumTitle}>{"ზარზმობა"}</h2>
+        <h3 className={styles.albumItemTitle}>{albumItem.name}</h3>
+      </div>
+
+      <Slider {...settings}>
+        {albumItem.albumPhotos.map((albumPhoto: AlbumPhoto) => (
+          <div key={albumItem.id} className={styles.slide}>
+            <img
+              className={styles.slideImg}
+              src={`${baseUrl}${albumPhoto?.photoURL}`}
+              alt={`Slide ${albumPhoto?.name} ${albumPhoto?.id}`}
+            />
           </div>
-          <img
-            className={styles.slideImg}
-            src={`${baseUrl}${albumPhoto?.photoURL}`}
-            alt={`Slide ${albumPhoto?.name} ${albumPhoto?.id}`}
-          />
-        </div>
-      ))}
-    </Slider>
+        ))}
+      </Slider>
+    </>
   );
 };
 

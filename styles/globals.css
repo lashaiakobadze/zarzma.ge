@@ -208,6 +208,7 @@ a {
 
 /* Changes for "album-item-slider" */
 .album-item-slider .slick-slide img {
+  object-fit: none;
   height: 406px;
   width: 50%;
 }
@@ -223,6 +224,47 @@ a {
 
 .album-item-slider .slick-slide {
   margin: 1px;
+}
+
+.album-item-slider .slick-dots {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: rgba(32, 32, 32, 0.15) #f5f5f5; /* For Firefox */
+  scroll-snap-type: x mandatory; /* Enable scroll snapping */
+}
+
+.album-item-slider .slick-dots .slick-active {
+  scroll-snap-align: center;
+  padding: 0 10px;  
+  transition: padding 0.5s ease;
+}
+
+.album-item-slider .slick-dots .slick-active img {
+  height: 180px;
+  transition: height 0.5s ease;
+}
+
+.album-item-slider .slick-dots::before,
+.album-item-slider .slick-dots::after {
+  content: "";
+  flex: 1;
+  min-width: 10%;
+}
+
+/* For Chrome, Safari, and Opera */
+.album-item-slider .slick-dots::-webkit-scrollbar {
+  height: 2px;
+}
+
+.album-item-slider .slick-dots::-webkit-scrollbar-thumb {
+  background-color: rgba(32, 32, 32, 0.15);
+}
+
+.album-item-slider .slick-dots::-webkit-scrollbar-track {
+  background-color: #f5f5f5;
 }
 
 /* specific styles for "react-h5-audio-player" third-party */

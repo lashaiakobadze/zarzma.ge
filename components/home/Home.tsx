@@ -57,13 +57,13 @@ const Home: React.FC<ArticlesProps> = ({ articles, loading }) => {
           key={videos[0]}
           videoId={getYoutubeId(videos[0])}
           width="100%"
-          height="309px"
+          height="400px"
         />
         <VideoPlayer
           key={videos[1]}
           videoId={getYoutubeId(videos[1])}
           width="100%"
-          height="309px"
+          height="400px"
         />
       </div>
     </>

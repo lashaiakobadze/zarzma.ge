@@ -3,12 +3,15 @@
 }
 
 .slide {
+  position: relative;
   display: flex !important;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .slideHead {
+  position: absolute;
+  top: 55%;
   display: flex;
   align-items: center;
   justify-content: center;
