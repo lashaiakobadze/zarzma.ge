@@ -21,7 +21,7 @@ const albumItemPage = () => {
     if (albumItemId) {
       fetchData("" + albumItemId);
     }
-  }, [albumItemId, albumItem]);
+  }, [albumItemId]);
 
   return <>{albumItem ? <AlbumItem albumItem={albumItem!} /> : <Loader />}</>;
 };

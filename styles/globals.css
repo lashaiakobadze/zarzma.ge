@@ -206,12 +206,23 @@ a {
   object-fit: none; /* object-fit: contain; */
 }
 
-
 /* Changes for "album-item-slider" */
+.album-item-slider .slick-slide img {
+  height: 406px;
+  width: 50%;
+}
+
+.album-item-slider .slick-dots li {
+  width: auto;
+}
+
+.album-item-slider .slick-next,
+.album-item-slider .slick-prev {
+  top: 35%;
+}
+
 .album-item-slider .slick-slide {
-  margin: 0 9px;
-  height: 155px;
-  width: 163px;
+  margin: 1px;
 }
 
 /* specific styles for "react-h5-audio-player" third-party */

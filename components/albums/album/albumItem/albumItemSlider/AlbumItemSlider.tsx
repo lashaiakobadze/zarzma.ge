@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -15,47 +15,50 @@ const AlbumItemSlider: React.FC<AlbumsSliderProps> = ({
   baseUrl,
   albumItem,
 }) => {
-  const getCustomPaging = (albumItem: AlbumItem) => {
-    return albumItem.albumPhotos.map((albumPhoto) => (
-      <div key={albumItem.id} className={styles.slide}>
-        <img
-          className={styles.slideImg}
-          src={`${baseUrl}${albumPhoto?.photoURL}`}
-          alt={`Slide ${albumPhoto?.name} ${albumPhoto?.id}`}
-        />
-      </div>
-    ));
-  };
-
-  const settings: any = {
-    customPaging: () => {
-      return getCustomPaging(albumItem);
+  const settings = {
+    customPaging: function (index: number) {
+      return (
+        <div key={albumItem.id} className={styles.slide}>
+          <img
+            className={styles.slideImg}
+            src={`${baseUrl}${albumItem.albumPhotos[index]?.photoURL}`}
+            alt={`Slide ${albumItem.albumPhotos[index]?.name} ${albumItem.albumPhotos[index].id}`}
+          />
+        </div>
+      );
     },
     dots: true,
-    dotsClass: "slick-dots slick-thumb",
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 2000,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ]
   };
-
   return (
-    <div>
-      <h2>Custom Paging</h2>
-      <Slider {...settings}>
-        {albumItem.albumPhotos.map((albumPhoto: AlbumPhoto) => (
-          <div key={albumItem.id} className={styles.slide}>
-            <img
-              className={styles.slideImg}
-              src={`${baseUrl}${albumPhoto?.photoURL}`}
-              alt={`Slide ${albumPhoto?.name} ${albumPhoto?.id}`}
-            />
+    <Slider {...settings}>
+      {albumItem.albumPhotos.map((albumPhoto: AlbumPhoto) => (
+        <div key={albumItem.id} className={styles.slide}>
+          <div className={styles.slideHead}>
+            <h2 className={styles.albumTitle}>{'ზარზმობა'}</h2>
+            <h3 className={styles.albumItemTitle}>{albumItem.name}</h3>
           </div>
-        ))}
-      </Slider>
-    </div>
+          <img
+            className={styles.slideImg}
+            src={`${baseUrl}${albumPhoto?.photoURL}`}
+            alt={`Slide ${albumPhoto?.name} ${albumPhoto?.id}`}
+          />
+        </div>
+      ))}
+    </Slider>
   );
 };
-
 
 export default AlbumItemSlider;
