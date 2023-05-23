@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
           <li>
             <a href="#">
               <Image
-                src="/main_assets/youtube.svg"
+                src="/main_assets/flag-ka.svg"
                 alt="language"
                 width={19}
                 height={19}

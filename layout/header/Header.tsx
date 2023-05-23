@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import style from "./Header.module.css";
 import NavigationItem from "@/components/shared/navItem/NavItem";
 import Link from "next/link";
+import { Howl } from "howler";
 
 const dropdownItems: {
   label: string;
@@ -14,7 +15,39 @@ const dropdownItems: {
   { label: "ხატები", href: "/galleria/icons" },
 ];
 
+const BASE_URL = process.env.dataUrl;
+
 const Header: React.FC = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [sound, setSound] = useState<Howl | null>(null);
+  const playSound =
+    `${BASE_URL}/Zarzma/Chants/ufalo_shegviwyalen.mp3`;
+
+  const initializeSound = () => {
+    if (!sound) {
+      setSound(
+        new Howl({
+          src: [playSound],
+        })
+      );
+    }
+  };
+
+  const handleClick = () => {
+    if (!sound) {
+      initializeSound();
+    }
+
+    if (sound) {
+      if (isPlaying) {
+        sound.stop();
+      } else {
+        sound.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
   return (
     <header className={style.header}>
       <a href="/">
@@ -27,9 +60,9 @@ const Header: React.FC = () => {
       </a>
 
       <nav className={style.header__container}>
-        <div className={style.header__item}>
+        <div className={style.header__item} onClick={handleClick}>
           <Image
-            src="/main_assets/Play-button-Patriarch-Illia.svg"
+            src={!isPlaying ? '/main_assets/play.svg' :  "/main_assets/stop.svg"}
             alt="play-button"
             width={24}
             height={24}
