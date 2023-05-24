@@ -10,9 +10,24 @@ const HandicraftPage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getHandicraft(39);
-      setHandicraftAlbum(data.albumItem);
-      setLoading(false);
+      const data1 = await getHandicraft(39);
+      const data2 = await getHandicraft(48);
+      let handicraft: AlbumItem[] = [];
+
+      // console.log('data1', data1.albumItem.length, 'data2', data1.albumItem.length)
+      // console.log('IF', data1.albumItem.length && data2.albumItem.length)
+
+      if (data1.albumItem.length && data1.albumItem.length) {
+        // console.log('handicraft', handicraft)
+        handicraft = [...data1.albumItem, ...data1.albumItem];
+      }
+
+      // console.log('handicraft', handicraft)
+
+      if (handicraft.length) {
+        setHandicraftAlbum(handicraft);
+        setLoading(false);
+      }
     };
 
     if (typeof window !== "undefined") {
@@ -22,7 +37,11 @@ const HandicraftPage = () => {
 
   return (
     <>
-      {!loading ? <Handicraft HandicraftAlbums={handicraftAlbum} /> : <Loader />}
+      {!loading ? (
+        <Handicraft HandicraftAlbums={handicraftAlbum} />
+      ) : (
+        <Loader />
+      )}
     </>
   );
 };
