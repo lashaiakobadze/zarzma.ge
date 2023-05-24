@@ -1,8 +1,7 @@
 import React from "react";
-import { GoogleMap, Marker, InfoWindow, MarkerF } from "@react-google-maps/api";
+import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 
 function Map({ options, center, zoom, mapContainerStyle, mapTypeId }: any) {
-  //  {center: number, zoom: number}
   const [selected, setSelected] = React.useState(null);
 
   const onSelect = (item: any) => {
@@ -18,23 +17,24 @@ function Map({ options, center, zoom, mapContainerStyle, mapTypeId }: any) {
       mapTypeId={mapTypeId}
       onLoad={() => console.log("Map Component Loaded...")}
     >
-      <MarkerF
+      <Marker
         position={center}
-        onLoad={() => console.log("Marker Loaded")}
-        icon="https://picsum.photos/64"
+        onClick={() => onSelect(center)}
+        icon={{
+          url: "https://picsum.photos/64",
+          scaledSize: new window.google.maps.Size(64, 64),
+        }}
       />
-      {/* <Marker position={center} onClick={() => onSelect(center)}>
-        {selected ? (
-          <InfoWindow
-            position={selected}
-            onCloseClick={() => setSelected(null)}
-          >
-            <div>
-              <h3>Your location</h3>
-            </div>
-          </InfoWindow>
-        ) : null}
-      </Marker> */}
+      {selected && (
+        <InfoWindow
+          position={selected}
+          onCloseClick={() => setSelected(null)}
+        >
+          <div>
+            <h3>Your location</h3>
+          </div>
+        </InfoWindow>
+      )}
     </GoogleMap>
   );
 }

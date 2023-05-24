@@ -5,6 +5,7 @@ import { useMemo } from "react";
 import { useLoadScript } from "@react-google-maps/api";
 import PageTitle from "../shared/page-title/PageTitle";
 import ContactForm from "./form/ContactForm";
+import Loader from "../shared/loader/Loader";
 
 export default function Contact() {
   const zoom = 12;
@@ -30,7 +31,7 @@ export default function Contact() {
   });
 
   if (!isLoaded) {
-    return <div className={style.contactMap}>Loading...</div>;
+    return <Loader/>;
   }
 
   return (

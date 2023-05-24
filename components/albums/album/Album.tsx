@@ -1,6 +1,5 @@
 import { Album } from "@/pages/models/album.interface";
 import PageTitle from "@/components/shared/page-title/PageTitle";
-import Loader from "@/components/shared/loader/Loader";
 import style from "./Album.module.css";
 import SlickSlider from "@/components/slickSlider/SlickSlider";
 import AlbumSlider from "./albumSlider/AlbumSlider";
