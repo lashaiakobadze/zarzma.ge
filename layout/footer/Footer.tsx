@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
       <div className={styles.column}>
         <ul>
           <li>
-            <a href="#">
+            <a href="https://www.facebook.com/Zarzmamonastery/" target="_blank">
               <Image
                 src="/main_assets/facebook.svg"
                 alt="facebook"
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="https://www.youtube.com/@zarzmamonasteryofficial7577/videos" target="_blank">
               <Image
                 src="/main_assets/youtube.svg"
                 alt="youtube"
