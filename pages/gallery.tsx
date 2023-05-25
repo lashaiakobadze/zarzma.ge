@@ -5,7 +5,7 @@ const Gallery = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('/galleria/albums');
+    router.push('/gallery/albums');
   }, []);
 
   return <div>Redirecting...</div>;

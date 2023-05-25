@@ -9,10 +9,10 @@ const dropdownItems: {
   label: string;
   href: string;
 }[] = [
-  { label: "ფოტოები", href: "/galleria/albums" },
-  { label: "ვიდეოები", href: "/galleria/videos" },
-  { label: "ფრესკები", href: "/galleria/frescoes" },
-  { label: "ხატები", href: "/galleria/icons" },
+  { label: "ფოტოები", href: "/gallery/albums" },
+  { label: "ვიდეოები", href: "/gallery/videos" },
+  { label: "ფრესკები", href: "/gallery/frescoes" },
+  { label: "ხატები", href: "/gallery/icons" },
 ];
 
 const BASE_URL = process.env.dataUrl;
@@ -71,7 +71,7 @@ const Header: React.FC = () => {
 
         <div className={style.header__item}>
           <NavigationItem
-            href="/galleria"
+            href="/gallery"
             label="გალერეა"
             dropdownItems={dropdownItems}
           />

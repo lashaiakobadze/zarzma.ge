@@ -36,7 +36,7 @@ const AlbumSlider: React.FC<AlbumsSliderProps> = ({ baseUrl, albumItems }) => {
       <Slider {...settings}>
         {albumItems.map((albumItem: AlbumItem) => (
           <div key={albumItem.id} className={styles.slide}>
-            <Link href={`/galleria/albums/albumItem/${albumItem.id}`} legacyBehavior>
+            <Link href={`/gallery/albums/albumItem/${albumItem.id}`} legacyBehavior>
               <div className={styles.overlay}>
                 <h3 className={styles.albumTitle}>{albumItem.name}</h3>
               </div>

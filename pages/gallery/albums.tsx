@@ -19,8 +19,6 @@ const AlbumsPage: React.FC = () => {
           albums.push(album);
         }
       });
-
-      console.log('album', albums)
       
       setAlbums(albums);
       setLoading(false);

@@ -44,7 +44,7 @@ const Home: React.FC<ArticlesProps> = ({ articles, loading }) => {
         </div>
       </div>
 
-      <Link href={"/galleria/frescoes"} legacyBehavior>
+      <Link href={"/gallery/frescoes"} legacyBehavior>
         <img
           className={style.frescoesImg}
           src="/main_assets/png/Mural-Images.png"
