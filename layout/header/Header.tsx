@@ -72,7 +72,7 @@ const Header: React.FC = () => {
         <div className={style.header__item}>
           <NavigationItem
             href="/galleria"
-            label="გალერია"
+            label="გალერეა"
             dropdownItems={dropdownItems}
           />
         </div>

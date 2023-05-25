@@ -14,7 +14,7 @@ const Albums: React.FC<AlbumsProps> = ({ albums, loading }) => {
     <>
       <div className={style.albums}>
         <div className={style.albumsHead}>
-          <h2 className={style.albumsTitle}>ფოტო გალერია</h2>
+          <h2 className={style.albumsTitle}>ფოტო გალერეა</h2>
           <div className={style.albumsItems}>
             <img
               className={style.albumsImg}

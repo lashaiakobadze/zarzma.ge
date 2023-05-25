@@ -48,7 +48,7 @@ const AlbumItemSlider: React.FC<AlbumsSliderProps> = ({
   return (
     <>
       <div className={styles.slideHead}>
-        <h2 className={styles.albumTitle}>{"ზარზმობა"}</h2>
+        <h2 className={styles.albumTitle}>{"გალერეა"}</h2>
         <h3 className={styles.albumItemTitle}>{albumItem.name}</h3>
       </div>
 

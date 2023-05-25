@@ -46,8 +46,8 @@ const AlbumsSlider: React.FC<AlbumsSliderProps> = ({ albums }) => {
 
             <img
               className={styles.albumImg}
-              src={`${BASE_URL}${album.albumItems[0].albumPhotos[0]?.photoURL}`}
-              alt={`Slide ${album.albumItems[0].albumPhotos[0]?.name} ${album.albumItems[0].albumPhotos[0]?.id}`}
+              src={`${BASE_URL}${album.albumItems[0]?.albumPhotos[0]?.photoURL}`}
+              alt={`Slide ${album.albumItems[0]?.albumPhotos[0]?.name} ${album.albumItems[0]?.albumPhotos[0]?.id}`}
             />
           </div>
         ))}

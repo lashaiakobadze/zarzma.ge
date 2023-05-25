@@ -19,8 +19,8 @@ const CurrentAlbum: React.FC<AlbumProps> = ({ album }) => {
             images={album.albumItems.map(
               (albumItem) => BASE_URL + albumItem.albumPhotos[0]?.photoURL
             )}
-            slidesToShow={2}
-            slidesToScroll={2}
+            slidesToShow={album.albumItems.length > 1 ? 2 : 1}
+            slidesToScroll={album.albumItems.length > 1 ? 2 : 1}
           />
         </div>
 
