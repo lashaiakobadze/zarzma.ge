@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -14,6 +14,24 @@ const BASE_URL = process.env.dataUrl + "/";
 const FrescoesSlider: React.FC<FrescoesSliderProps> = ({
   slides,
 }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+  const modalRef = useRef<HTMLDivElement>(null);
+  const modalImg = useRef<HTMLImageElement>(null);
+
+  const openModal = (imageURL: string) => {
+    setModalIsOpen(true);
+    setSelectedImage(imageURL);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
+  const handleImageClick = (event: React.MouseEvent<HTMLImageElement>) => {
+    event.stopPropagation();
+  };
+  
   const settings = {
     arrows: true,
     dots: false,
@@ -41,10 +59,26 @@ const FrescoesSlider: React.FC<FrescoesSliderProps> = ({
             <img
               src={`${BASE_URL}${image.photoURL}`}
               alt={`Slide ${image.name} ${image.id}`}
+              onClick={() => openModal(`${BASE_URL}${image.photoURL}`)}
             />
           </div>
         ))}
       </Slider>
+
+      {modalIsOpen && (
+        <div ref={modalRef} className={styles.modal} onClick={closeModal}>
+          <span className={styles.close} onClick={closeModal}>
+            &times;
+          </span>
+
+          <img
+            ref={modalImg}
+            src={selectedImage}
+            className={styles.modalContent}
+            onClick={handleImageClick}
+          />
+        </div>
+      )}
     </div>
   );
 };

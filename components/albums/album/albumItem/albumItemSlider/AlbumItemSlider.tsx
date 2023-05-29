@@ -42,6 +42,7 @@ const AlbumItemSlider: React.FC<AlbumsSliderProps> = ({
             className={styles.slideImg}
             src={`${baseUrl}${albumItem.albumPhotos[index]?.photoURL}`}
             alt={`Slide ${albumItem.albumPhotos[index]?.name} ${albumItem.albumPhotos[index].id}`}
+            onClick={() => openModal(`${baseUrl}${albumItem.albumPhotos[index]?.photoURL}`)}
           />
         </div>
       );
