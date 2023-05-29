@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 import styles from "./AlbumItemSlider.module.css";
 import { AlbumItem } from "@/pages/models/albumItem.interface";
 import { AlbumPhoto } from "@/pages/models/albumPhoto.interface";
@@ -15,6 +16,24 @@ const AlbumItemSlider: React.FC<AlbumsSliderProps> = ({
   baseUrl,
   albumItem,
 }) => {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+  const modalRef = useRef<HTMLDivElement>(null);
+  const modalImg = useRef<HTMLImageElement>(null);
+
+  const openModal = (imageURL: string) => {
+    setModalIsOpen(true);
+    setSelectedImage(imageURL);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
+  const handleImageClick = (event: React.MouseEvent<HTMLImageElement>) => {
+    event.stopPropagation();
+  };
+
   const settings = {
     customPaging: function (index: number) {
       return (
@@ -59,10 +78,26 @@ const AlbumItemSlider: React.FC<AlbumsSliderProps> = ({
               className={styles.slideImg}
               src={`${baseUrl}${albumPhoto?.photoURL}`}
               alt={`Slide ${albumPhoto?.name} ${albumPhoto?.id}`}
+              onClick={() => openModal(`${baseUrl}${albumPhoto.photoURL}`)}
             />
           </div>
         ))}
       </Slider>
+
+      {modalIsOpen && (
+        <div ref={modalRef} className={styles.modal} onClick={closeModal}>
+          <span className={styles.close} onClick={closeModal}>
+            &times;
+          </span>
+
+          <img
+            ref={modalImg}
+            src={selectedImage}
+            className={styles.modalContent}
+            onClick={handleImageClick}
+          />
+        </div>
+      )}
     </>
   );
 };
