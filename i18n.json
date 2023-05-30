@@ -1,0 +1,8 @@
+{
+  "locales": ["geo", "en", "rus"],
+  "defaultLocale": "en",
+  "pages": {
+    "*": ["common"],
+    "/": ["home"]
+  }
+}

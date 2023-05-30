@@ -1,0 +1,17 @@
+.dropdown {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: -400%;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+}

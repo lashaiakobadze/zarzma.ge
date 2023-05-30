@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "./Footer.module.css";
 import Link from "next/link";
+import SwitchLanguage from "../switch-language/switch-language";
 
 const Footer: React.FC = () => {
   return (
@@ -40,13 +41,16 @@ const Footer: React.FC = () => {
               <Image
                 src="/main_assets/facebook.svg"
                 alt="facebook"
-                width={19}
-                height={19}
+                width={15}
+                height={14}
               />
             </a>
           </li>
           <li>
-            <a href="https://www.youtube.com/@zarzmamonasteryofficial7577/videos" target="_blank">
+            <a
+              href="https://www.youtube.com/@zarzmamonasteryofficial7577/videos"
+              target="_blank"
+            >
               <Image
                 src="/main_assets/youtube.svg"
                 alt="youtube"
@@ -56,14 +60,7 @@ const Footer: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="#">
-              <Image
-                src="/main_assets/flag-ka.svg"
-                alt="language"
-                width={19}
-                height={19}
-              />
-            </a>
+            <SwitchLanguage />
           </li>
           <li>
             <Link href={"/contact"} key={"კონტაქტი"} legacyBehavior>

@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import getArticles from "./api/articlesApi";
 import { Article } from "./models/article.interface";
 import { DocType } from "./models/docType.enum";
+import useTranslation from 'next-translate/useTranslation';
 
 const HomePage: NextPage = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -19,10 +20,13 @@ const HomePage: NextPage = () => {
     fetchData();
   }, []);
 
+  const { t, lang } = useTranslation('common');
+  const title = t('title');
+
   return (
     <>
       <Head>
-        <title>ზარზმის მამათა მონასტერი</title>
+        <title>{title}</title>
         <meta
           name="title"
           content="ზარზმის მამათა მონასტერი"
