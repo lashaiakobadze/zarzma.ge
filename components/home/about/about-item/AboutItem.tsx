@@ -26,7 +26,7 @@ const AboutItem: React.FC<ArticleProps> = ({ article }) => {
 
         <div className={style.aboutItemContent}>
           <h2>{article?.title}</h2>
-          <p className={style.abbreviate}>{article?.text}</p>
+          <p className={style.abbreviate} dangerouslySetInnerHTML={{ __html: article?.text }}></p>
           <Link href={"/about"} legacyBehavior>
             <button>
               წაიკითხე მეტი
