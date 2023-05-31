@@ -19,21 +19,20 @@ const HomePage: NextPage = () => {
     };
     fetchData();
   }, []);
-
+  
   const { t, lang } = useTranslation('common');
-  const title = t('title');
 
   return (
     <>
       <Head>
-        <title>{title}</title>
+        <title>{t('title')}</title>
         <meta
           name="title"
-          content="ზარზმის მამათა მონასტერი"
+          content={t('title')}
         />
         <meta
           name="description"
-          content="ზარზმის მონასტერი მდებარეობს საქართველოში, სამცხე–ჯავახეთის რეგიონის ადიგენის მუნიციპალიტეტში, ისტორიულ მხარე სამცხეში, სოფელ ზარზმაში, მდინარე ქვაბლიანის ხეობაში. ზარზმის მონასტერი დაარსა, ადრინდელი ფეოდალური ხანის სასულიერო მოღვაწემ სერაპიონ ზარზმელმა, წარმოშობით კლარჯმა, რომლის ცხოვრებაც აღწერა მწერალმა და საეკლესიო მოღვაწემ ბასილ ზარზმელმა ცნობილ ჰაგიოგრაფიულ თხზულებაში ”ცხოვრებაჲ და მოქალაქეობაჲ ღმერთ - შემოსილისა და ნეტარისა მამისა ჩუენისაჲ სერაპიონისი”."
+          content={t('description')}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/main_assets/logo-zarzma.svg" />

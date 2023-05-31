@@ -1,23 +1,26 @@
 import React, { useState } from "react";
 import Image from "next/image";
+import useTranslation from 'next-translate/useTranslation';
 import style from "./Header.module.css";
 import NavigationItem from "@/components/shared/navItem/NavItem";
 import Link from "next/link";
 import { Howl } from "howler";
 
-const dropdownItems: {
-  label: string;
-  href: string;
-}[] = [
-  { label: "ფოტოები", href: "/gallery/albums" },
-  { label: "ვიდეოები", href: "/gallery/videos" },
-  { label: "ფრესკები", href: "/gallery/frescoes" },
-  { label: "ხატები", href: "/gallery/icons" },
-];
-
 const BASE_URL = process.env.dataUrl;
 
 const Header: React.FC = () => {
+  const { t, lang } = useTranslation('common');
+
+  const dropdownItems: {
+    label: string;
+    href: string;
+  }[] = [
+    { label: t('photos'), href: "/gallery/albums" },
+    { label: t('videos'), href: "/gallery/videos" },
+    { label: t('frescoes'), href: "/gallery/frescoes" },
+    { label: t('icons'), href: "/gallery/icons" },
+  ];
+
   const [isPlaying, setIsPlaying] = useState(false);
   const [sound, setSound] = useState<Howl | null>(null);
   const playSound =
@@ -72,13 +75,13 @@ const Header: React.FC = () => {
         <div className={style.header__item}>
           <NavigationItem
             href="/gallery"
-            label="გალერეა"
+            label={t('gallery')}
             dropdownItems={dropdownItems}
           />
         </div>
 
         <div className={style.header__item}>
-          <NavigationItem href="/chants" label="საგალობლები" />
+          <NavigationItem href="/chants" label={t('chants')} />
         </div>
 
         <div className={`${style.header__item} ${style.header__itemCenter}`}>
@@ -88,15 +91,15 @@ const Header: React.FC = () => {
         </div>
 
         <div className={style.header__item}>
-          <NavigationItem href="/publications" label="გამოცემები" />
+          <NavigationItem href="/publications" label={t('publications')} />
         </div>
 
         <div className={style.header__item}>
-          <NavigationItem href="/handicraft" label="ხელსაქმე" />
+          <NavigationItem href="/handicraft" label={t('handicraft')} />
         </div>
 
         <div className={style.header__item}>
-          <NavigationItem href="/about" label="შესახებ" />
+          <NavigationItem href="/about" label={t('about')} />
         </div>
       </nav>
     </header>

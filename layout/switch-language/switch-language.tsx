@@ -4,6 +4,7 @@ import i18nConfig from "../../i18n.json";
 import useTranslation from "next-translate/useTranslation";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import style from "./switch-language.module.css";
+import Link from "next/link";
 
 const SwitchLanguage: React.FC = () => {
   const { language, setLanguage } = useContext(LanguageContext)!;
@@ -38,14 +39,16 @@ const SwitchLanguage: React.FC = () => {
             if (lng === language) return null;
 
             return (
-              <Image
-                key={lng}
-                src={`/main_assets/flag-${lng}.svg`}
-                alt={t(`common:language-name-${lng}`)}
-                onClick={() => handleLanguageChange(lng)}
-                width={21}
-                height={13}
-              />
+              <Link href="/" locale={lng}>
+                <Image
+                  key={lng}
+                  src={`/main_assets/flag-${lng}.svg`}
+                  alt={t(`common:language-name-${lng}`)}
+                  onClick={() => handleLanguageChange(lng)}
+                  width={21}
+                  height={13}
+                />
+              </Link>
             );
           })}
         </ul>

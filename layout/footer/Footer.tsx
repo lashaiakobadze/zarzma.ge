@@ -1,19 +1,22 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./Footer.module.css";
 import Link from "next/link";
+import useTranslation from 'next-translate/useTranslation';
+import styles from "./Footer.module.css";
 import SwitchLanguage from "../switch-language/switch-language";
 
 const Footer: React.FC = () => {
+  const { t, lang } = useTranslation('common');
+
   return (
     <footer className={styles.footer}>
       <div className={styles.column}>
         <Link
           href={"/foundation"}
-          key={"საქველმოქმედო ფონდი სავანე"}
+          key={t('charitable-foundation-savane')}
           legacyBehavior
         >
-          <a className={styles.columnItem}>{"საქველმოქმედო ფონდი სავანე"}</a>
+          <a className={styles.columnItem}>{t('charitable-foundation-savane')}</a>
         </Link>
       </div>
 
@@ -27,10 +30,10 @@ const Footer: React.FC = () => {
         />
         <Link
           href={"/contact"}
-          key={"© 2023 ზარზმის მამათა მონასტერი"}
+          key={t('copyright')}
           legacyBehavior
         >
-          <a>{"© 2023 ზარზმის მამათა მონასტერი"}</a>
+          <a>{t('copyright')}</a>
         </Link>
       </div>
 
@@ -63,14 +66,14 @@ const Footer: React.FC = () => {
             <SwitchLanguage />
           </li>
           <li>
-            <Link href={"/contact"} key={"კონტაქტი"} legacyBehavior>
-              <a>{"კონტაქტი"}</a>
+            <Link href={"/contact"} key={t('contact')} legacyBehavior>
+              <a>{t('contact')}</a>
             </Link>
           </li>
           <li>|</li>
           <li>
-            <Link href={"/foundation"} key={"შემოწირულობა"} legacyBehavior>
-              <a>{"შემოწირულობა"}</a>
+            <Link href={"/foundation"} key={t('donation')} legacyBehavior>
+              <a>{t('donation')}</a>
             </Link>
           </li>
         </ul>

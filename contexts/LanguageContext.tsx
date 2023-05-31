@@ -27,14 +27,14 @@ const LanguageProvider: React.FC<LanguageContextProps> = ({ children }) => {
 
     saveLanguageToStorage(preferredLanguage);
 
-    // // Redirect to the preferred language route if the current route doesn't have a language prefix
+    // Redirect to the preferred language route if the current route doesn't have a language prefix
     // if (!router.pathname.startsWith(`/${preferredLanguage}`)) {
     //   router.push(`/${preferredLanguage}${router.asPath}`);
     // }
   }, []);
 
   const getPreferredLanguage = (): string => {
-    return localStorage.getItem("language") || "en";
+    return localStorage.getItem("language") || "geo";
   };
 
   const setLanguage = (lang: string) => {
@@ -50,7 +50,7 @@ const LanguageProvider: React.FC<LanguageContextProps> = ({ children }) => {
 };
 
 const getLanguageFromContext = (): string => {
-  return localStorage.getItem("language") || "en";
+  return localStorage.getItem("language") || "geo";
 };
 
 export { LanguageContext, LanguageProvider, getLanguageFromContext };

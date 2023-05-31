@@ -6,6 +6,7 @@ import SlickSlider from "../slickSlider/SlickSlider";
 import VideoPlayer from "../videos/videoPlayer/VideoPlayer";
 import About from "./about/About";
 import style from "./Home.module.css";
+import useTranslation from 'next-translate/useTranslation';
 
 const images = [
   "../slider_assets/slider1.png",
@@ -24,12 +25,14 @@ interface ArticlesProps {
 }
 
 const Home: React.FC<ArticlesProps> = ({ articles, loading }) => {
+  const { t, lang } = useTranslation('common');
+
   return (
     <>
       <div className="main-slider">
         <SlickSlider images={images} />
       </div>
-      <PageTitle title={"შესახებ"} paddingLeft={111} />
+      <PageTitle title={t('about')} paddingLeft={111} />
 
       <div className={style.aboutContainer}>
         <div className={style.aboutItems}>
