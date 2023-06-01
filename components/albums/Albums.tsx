@@ -3,6 +3,7 @@ import style from "./Albums.module.css";
 import { Album } from "@/pages/models/album.interface";
 import PageTitle from "../shared/page-title/PageTitle";
 import AlbumsSlider from "./albumsSlider/AlbumsSlider";
+import useTranslation from "next-translate/useTranslation";
 
 interface AlbumsProps {
   albums: Album[];
@@ -10,6 +11,8 @@ interface AlbumsProps {
 }
 
 const Albums: React.FC<AlbumsProps> = ({ albums, loading }) => {
+  const { t, lang } = useTranslation('common');
+
   return (
     <>
       <div className={style.albums}>
@@ -29,7 +32,7 @@ const Albums: React.FC<AlbumsProps> = ({ albums, loading }) => {
           </div>
         </div>
 
-        <PageTitle title={"ფოტოები"} paddingLeft={143} />
+        <PageTitle title={t('photos')} paddingLeft={143} />
 
         <div className={style.albumsSlider}>
           {loading ? (

@@ -1,7 +1,10 @@
+import useTranslation from "next-translate/useTranslation";
 import { useState } from "react";
 import style from "./ContactForm.module.css";
 
 const ContactForm = () => {
+  const { t, lang } = useTranslation("common");
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState("");
@@ -32,7 +35,7 @@ const ContactForm = () => {
         type="text"
         name="name"
         value={name}
-        placeholder="სახელი"
+        placeholder={t("contactForm.name")}
         onChange={(e) => setName(e.target.value)}
         required
       />
@@ -41,7 +44,7 @@ const ContactForm = () => {
         type="email"
         name="email"
         value={email}
-        placeholder="ელფოსტა"
+        placeholder={t("contactForm.email")}
         onChange={(e) => setEmail(e.target.value)}
         required
       />
@@ -50,7 +53,7 @@ const ContactForm = () => {
         type="text"
         name="subject"
         value={subject}
-        placeholder="საგანი"
+        placeholder={t("contactForm.subject")}
         onChange={(e) => setSubject(e.target.value)}
         required
       />
@@ -58,13 +61,13 @@ const ContactForm = () => {
       <textarea
         name="message"
         value={message}
-        placeholder="შეტყობინება"
+        placeholder={t("contactForm.message")}
         onChange={(e) => setMessage(e.target.value)}
         required
       />
 
       <button type="submit" disabled={submitting}>
-        {submitting ? "იგზავნება..." : "გაგზავნა"}
+        {submitting ? t("contactForm.sending") : t("contactForm.send")}
       </button>
     </form>
   );

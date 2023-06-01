@@ -4,6 +4,7 @@ import styles from "./Playlist.module.css";
 import "react-h5-audio-player/lib/styles.css";
 import PageTitle from "../shared/page-title/PageTitle";
 import { Chant } from "@/pages/models/chant.interface";
+import useTranslation from 'next-translate/useTranslation';
 
 interface PlaylistProps {
   playlist: Chant[];
@@ -12,9 +13,11 @@ interface PlaylistProps {
 const BASE_URL = process.env.dataUrl;
 
 const Playlist: React.FC<PlaylistProps> = ({ playlist }) => {
+  const { t, lang } = useTranslation('common');
+
   return (
     <>
-      <PageTitle title={"საგალობლები"} paddingLeft={164} />
+      <PageTitle title={t('chants')} paddingLeft={164} />
 
       <div className={styles.playlistContainer}>
         {playlist.map((chant) => (

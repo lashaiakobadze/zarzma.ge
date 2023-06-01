@@ -2,6 +2,7 @@ import { Album } from "@/pages/models/album.interface";
 import Link from "next/link";
 import PageTitle from "../shared/page-title/PageTitle";
 import styles from "./Handicraft.module.css";
+import useTranslation from 'next-translate/useTranslation';
 
 const BASE_URL = process.env.dataUrl + "/";
 
@@ -14,9 +15,11 @@ const Handicraft: React.FC<HandicraftProps> = ({
   incenseAlbum,
   enamelAlbum,
 }) => {
+  const { t, lang } = useTranslation('common');
+
   return (
     <>
-      <PageTitle title={"ხელსაქმე"} center={true} />
+      <PageTitle title={t('handicraft')} center={true} />
 
       <div className={styles.handicraftContainer}>
         <div className={styles.handicraft}>

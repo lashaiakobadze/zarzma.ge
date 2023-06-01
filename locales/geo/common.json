@@ -15,5 +15,13 @@
   "charitable-foundation-savane": "საქველმოქმედო ფონდი სავანე",
   "copyright": "© 2023 ზარზმის მამათა მონასტერი",
   "about": "შესახებ",
-  "donation": "შემოწირულობა"
+  "donation": "შემოწირულობა",
+  "contactForm": {
+    "name": "სახელი",
+    "email": "ემაილი",
+    "subject": "საგანი",
+    "message": "შეტყობინება",
+    "send": "გაგაზავნა",
+    "sending": "იგზავნება..."
+  }
 }

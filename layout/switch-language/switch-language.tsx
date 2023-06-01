@@ -28,10 +28,10 @@ const SwitchLanguage: React.FC = () => {
         alt={t(`common:language-name-${language}`)}
         onClick={handleDropdownToggle}
         width={21}
-        height={13}
+        height={15}
       />
       {isDropdownOpen && (
-        <ul
+        <div
           className={style.dropdownMenu}
           aria-labelledby="dropdown-basic-button"
         >
@@ -46,12 +46,12 @@ const SwitchLanguage: React.FC = () => {
                   alt={t(`common:language-name-${lng}`)}
                   onClick={() => handleLanguageChange(lng)}
                   width={21}
-                  height={13}
+                  height={15}
                 />
               </Link>
             );
           })}
-        </ul>
+        </div>
       )}
     </div>
   );

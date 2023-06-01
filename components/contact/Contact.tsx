@@ -6,8 +6,11 @@ import { useLoadScript } from "@react-google-maps/api";
 import PageTitle from "../shared/page-title/PageTitle";
 import ContactForm from "./form/ContactForm";
 import Loader from "../shared/loader/Loader";
+import useTranslation from "next-translate/useTranslation";
 
 export default function Contact() {
+  const { t, lang } = useTranslation('common');
+
   const zoom = 12;
   const containerStyle = {
     width: "100%",
@@ -46,7 +49,7 @@ export default function Contact() {
         />
       </div>
 
-      <PageTitle title={"კონტაქტი"} paddingLeft={200} />
+      <PageTitle title={t('contact')} paddingLeft={200} />
 
       <div className={style.contactContent}>
         <div className={style.contactForm}>

@@ -2,6 +2,7 @@ import PageTitle from "../shared/page-title/PageTitle";
 import { VideoData } from "../../pages/models/video.interface";
 import VideoPlayer from "./videoPlayer/VideoPlayer";
 import style from "./Videos.module.css";
+import useTranslation from "next-translate/useTranslation";
 
 interface VideosProps {
   videos: VideoData[];
@@ -13,6 +14,8 @@ const getYoutubeId = (url: string) => {
 };
 
 const Videos: React.FC<VideosProps> = ({ videos }) => {
+  const { t, lang } = useTranslation('common');
+
   return (
     <>
       {videos && (
@@ -25,7 +28,7 @@ const Videos: React.FC<VideosProps> = ({ videos }) => {
         </div>
       )}
 
-      <PageTitle title={"ვიდეოები"} paddingLeft={118} />
+      <PageTitle title={t('videos')} paddingLeft={118} />
 
       {videos && (
         <div className={style.videoItems}>

@@ -15,5 +15,13 @@
   "charitable-foundation-savane": "Charitable Foundation Savane",
   "copyright": "© 2023 onastery of the Fathers of Zarzma",
   "about": "About",
-  "donation": "Donation"
+  "donation": "Donation",
+  "contactForm": {
+    "name": "Name",
+    "email": "E-mail",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send",
+    "sending": "Sending..."
+  }
 }
