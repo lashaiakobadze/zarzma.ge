@@ -1,4 +1,5 @@
 import { Article } from "@/pages/models/article.interface";
+import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
 import Link from "next/link";
 import style from "./AboutItem.module.css";
@@ -10,26 +11,25 @@ interface ArticleProps {
 }
 
 const AboutItem: React.FC<ArticleProps> = ({ article }) => {
+  const { t, lang } = useTranslation("common");
   const imgUrl = BASE_URL + article?.photoUrl;
 
   return (
     <>
       <div className={style.aboutItem}>
-        {(article?.photoUrl && BASE_URL) && (
-          <Image
-            src={imgUrl}
-            alt={article?.title}
-            width={202}
-            height={260}
-          />
+        {article?.photoUrl && BASE_URL && (
+          <Image src={imgUrl} alt={article?.title} width={202} height={260} />
         )}
 
         <div className={style.aboutItemContent}>
           <h2>{article?.title}</h2>
-          <p className={style.abbreviate} dangerouslySetInnerHTML={{ __html: article?.text }}></p>
+          <p
+            className={style.abbreviate}
+            dangerouslySetInnerHTML={{ __html: article?.text }}
+          ></p>
           <Link href={"/about"} legacyBehavior>
             <button>
-              წაიკითხე მეტი
+              {t("readMore")}
               <Image
                 src="/main_assets/Vector.svg"
                 alt="savane"
