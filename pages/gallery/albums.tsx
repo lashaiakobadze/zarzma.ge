@@ -1,10 +1,11 @@
 import Albums from "@/components/albums/Albums";
+import { NextPage } from "next";
 import React, { useEffect, useState } from "react";
 import getAlbums from "../api/albumsApi";
 import { Album } from "../models/album.interface";
 import { AlbumType } from "../models/albumType.enum";
 
-const AlbumsPage: React.FC = () => {
+const AlbumsPage: NextPage = () => {
   const [albums, setAlbums] = useState<Album[]>([]);
   const [loading, setLoading] = useState(true);
 

@@ -2,10 +2,11 @@ import AlbumItem from "@/components/albums/album/albumItem/AlbumItem";
 import Loader from "@/components/shared/loader/Loader";
 import getAlbumItem from "@/pages/api/albumItemApi";
 import * as Item from "@/pages/models/albumItem.interface";
+import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
-const albumItemPage = () => {
+const albumItemPage: NextPage = () => {
   const router = useRouter();
   const { albumItemId } = router.query;
 

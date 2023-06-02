@@ -5,18 +5,31 @@ import { DocType } from "./models/docType.enum";
 import Publications from "@/components/publications/Publications";
 import Loader from "@/components/shared/loader/Loader";
 import useTranslation from "next-translate/useTranslation";
+import { NextPage } from "next";
 
-export default function FoundationPage() {
+const PublicationPage: NextPage = () => {
   const [articles, setArticles] = useState<Article[]>([]);
-  const { lang } = useTranslation('common');
+  const { lang } = useTranslation("common");
 
   useEffect(() => {
+    let isMounted = true;
+
     const fetchData = async () => {
       const data = await getArticles(DocType.publication, lang);
-      setArticles(data);
+      if (isMounted) {
+        setArticles(data);
+      }
     };
     fetchData();
-  }, [lang]);
 
-  return <>{articles.length ? <Publications articles={articles} /> : <Loader />}</>;
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  return (
+    <>{articles.length ? <Publications articles={articles} /> : <Loader />}</>
+  );
 }
+
+export default PublicationPage;

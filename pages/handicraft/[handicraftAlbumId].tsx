@@ -3,10 +3,11 @@ import HandicraftAlbum from "@/components/handicraft/HandicraftItem/HandicraftIt
 import Loader from "@/components/shared/loader/Loader";
 import getAlbums from "@/pages/api/albumsApi";
 import { Album } from "@/pages/models/album.interface";
+import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
-const handicraftAlbumPage = () => {
+const handicraftAlbumPage: NextPage = () => {
   const router = useRouter();
   const { handicraftAlbumId } = router.query;
 

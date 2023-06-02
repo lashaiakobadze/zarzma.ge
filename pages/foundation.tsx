@@ -1,6 +1,9 @@
 import React from "react";
 import Foundation from "@/components/foundation/Foundation";
+import { NextPage } from "next";
 
-export default function FoundationPage() {
+const FoundationPage: NextPage = () => {
   return <Foundation />;
-}
+};
+
+export default FoundationPage;

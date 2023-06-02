@@ -2,7 +2,7 @@
 const nextTranslate = require("next-translate-plugin");
 
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   env: {
     GOOGLE_MAPS_API_KEY: "your-api-key-here",
     dataUrl: "https://zarzmaapi.azurewebsites.net",

@@ -13,12 +13,18 @@ const HomePage: NextPage = () => {
   const { t, lang } = useTranslation('common');
 
   useEffect(() => {
+    let isMounted = true;
+    
     const fetchData = async () => {
       const data = await getArticles(DocType.eparchy, lang);
       setArticles(data);
       setLoading(false);
     };
     fetchData();
+
+    return () => {
+      isMounted = false;
+    };
   }, [lang]);
   
 

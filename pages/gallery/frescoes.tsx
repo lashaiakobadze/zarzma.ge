@@ -1,4 +1,5 @@
 import Frescoes from "@/components/frescos/Frescoes";
+import { NextPage } from "next";
 import React, { useEffect, useState } from "react";
 import getFrescoes from "../api/frescoesApi";
 import { AlbumID } from "../models/albumID.enum";
@@ -6,7 +7,7 @@ import { AlbumItem } from "../models/albumItem.interface";
 
 const FrescoesAlbumItemID = AlbumID.FrescoesAlbumItemID;
 
-const FrescoesPage: React.FC = () => {
+const FrescoesPage: NextPage = () => {
   const [frescoesAlbum, setFrescoesAlbum] = useState<AlbumItem[]>([]);
   const [loading, setLoading] = useState(true);
 
