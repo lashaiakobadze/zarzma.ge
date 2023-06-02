@@ -1,7 +1,7 @@
-const getArticles = async (DocType: number) => {
+const getArticles = async (DocType: number, lang?: string) => {
   try {
     const response = await fetch(
-      `${process.env.dataUrl}/api/Articls/ArticleData?docType=${DocType}`
+      `${process.env.dataUrl}/api/Articls/ArticleData?docType=${DocType}&docLang=${lang}`
     );
 
     if (!response.ok) {

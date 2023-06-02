@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
-// import useTranslation from "next-translate/useTranslation";
 
 type LanguageContextProps = {
   children: React.ReactNode;
@@ -18,7 +17,6 @@ const LanguageContext = createContext<LanguageContextValue | undefined>(
 const LanguageProvider: React.FC<LanguageContextProps> = ({ children }) => {
   const [language, setLanguageState] = useState<string>("");
   const router = useRouter();
-  // const { lang } = useTranslation();
 
   useEffect(() => {
     const preferredLanguage = getPreferredLanguage();

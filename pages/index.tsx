@@ -10,17 +10,17 @@ import useTranslation from 'next-translate/useTranslation';
 const HomePage: NextPage = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
+  const { t, lang } = useTranslation('common');
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getArticles(DocType.eparchy);
+      const data = await getArticles(DocType.eparchy, lang);
       setArticles(data);
       setLoading(false);
     };
     fetchData();
-  }, []);
+  }, [lang]);
   
-  const { t, lang } = useTranslation('common');
 
   return (
     <>

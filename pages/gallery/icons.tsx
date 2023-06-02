@@ -4,17 +4,19 @@ import { Article } from "../models/article.interface";
 import { DocType } from "../models/docType.enum";
 import Icons from "@/components/icons/Icons";
 import Loader from "@/components/shared/loader/Loader";
+import useTranslation from "next-translate/useTranslation";
 
 export default function FoundationPage() {
   const [articles, setArticles] = useState<Article[]>([]);
-
+  const { lang } = useTranslation('common');
+  
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getArticles(DocType.icons);
+      const data = await getArticles(DocType.icons, lang);
       setArticles(data);
     };
     fetchData();
-  }, []);
+  }, [lang]);
 
   return <>{articles.length ? <Icons articles={articles} /> : <Loader />}</>;
 }
