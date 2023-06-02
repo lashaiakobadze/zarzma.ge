@@ -56,8 +56,8 @@ const NavigationItem: React.FC<NavigationItemProps> = ({
             <div className={style.dropdown}>
               <ul onMouseLeave={handleMouseLeave}>
                 {dropdownItems.map((item) => (
-                  <li>
-                    <Link href={item.href} key={item.label} legacyBehavior>
+                  <li key={item.label}>
+                    <Link href={item.href} legacyBehavior>
                       <a className={style.navItem}>{item.label}</a>
                     </Link>
                   </li>

@@ -1,15 +1,14 @@
 import React, { useContext, useState } from "react";
 import Image from "next/image";
 import i18nConfig from "../../i18n.json";
-import useTranslation from "next-translate/useTranslation";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import style from "./switch-language.module.css";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 const SwitchLanguage: React.FC = () => {
   const { language, setLanguage } = useContext(LanguageContext)!;
-  const { locales, defaultLocale } = i18nConfig;
-  const { t } = useTranslation("common");
+  const { locales } = i18nConfig;
+  const router = useRouter();
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -18,6 +17,28 @@ const SwitchLanguage: React.FC = () => {
   };
 
   const handleLanguageChange = (lang: string) => {
+    const currentPathname = router.pathname;
+    const currentQuery = router.query;
+    const defaultLanguage = i18nConfig.defaultLocale;
+
+    const isDefaultLanguage = lang === defaultLanguage;
+
+    // If the current page is already in the default language,
+    // remove the language prefix when switching to the default language
+    const newPathname = isDefaultLanguage
+      ? currentPathname.replace(`/${language}`, '')
+      : `/${lang}${currentPathname}`;
+    // const newPathname = `/${lang}${currentPathname}`;
+
+    router.push(
+      {
+        pathname: newPathname,
+        query: currentQuery,
+      },
+      undefined,
+      { locale: lang }
+    );
+
     setLanguage(lang);
   };
 
@@ -25,7 +46,7 @@ const SwitchLanguage: React.FC = () => {
     <div className={style.dropdown}>
       <Image
         src={`/main_assets/flag-${language}.svg`}
-        alt={t(`common:language-name-${language}`)}
+        alt={`flag-${language}`}
         onClick={handleDropdownToggle}
         width={21}
         height={15}
@@ -39,16 +60,14 @@ const SwitchLanguage: React.FC = () => {
             if (lng === language) return null;
 
             return (
-              <Link href="/" locale={lng}>
-                <Image
-                  key={lng}
-                  src={`/main_assets/flag-${lng}.svg`}
-                  alt={t(`common:language-name-${lng}`)}
-                  onClick={() => handleLanguageChange(lng)}
-                  width={21}
-                  height={15}
-                />
-              </Link>
+              <Image
+                key={lng}
+                src={`/main_assets/flag-${lng}.svg`}
+                alt={`flag-${lng}`}
+                onClick={() => handleLanguageChange(lng)}
+                width={21}
+                height={15}
+              />
             );
           })}
         </div>

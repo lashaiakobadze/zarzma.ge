@@ -1,6 +1,7 @@
 {
   "locales": ["geo", "en", "rus"],
   "defaultLocale": "geo",
+  "localeDetection": false,
   "pages": {
     "*": ["common"],
     "/": ["home"]
