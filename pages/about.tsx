@@ -13,7 +13,6 @@ const AboutPage: NextPage = () => {
 
   useEffect(() => {
     let isMounted = true;
-    console.log(isMounted);
 
     const fetchData = async () => {
       const data = await getArticles(DocType.eparchy, lang);
@@ -27,7 +26,7 @@ const AboutPage: NextPage = () => {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [lang]);
   return <About articles={articles} loading={loading} />;
 };
 

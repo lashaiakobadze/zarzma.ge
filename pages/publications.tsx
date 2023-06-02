@@ -25,7 +25,7 @@ const PublicationPage: NextPage = () => {
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [lang]);
 
   return (
     <>{articles.length ? <Publications articles={articles} /> : <Loader />}</>
