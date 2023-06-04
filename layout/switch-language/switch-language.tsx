@@ -25,10 +25,12 @@ const SwitchLanguage: React.FC = () => {
 
     // If the current page is already in the default language,
     // remove the language prefix when switching to the default language
-    const newPathname = isDefaultLanguage
-      ? currentPathname.replace(`/${language}`, '')
-      : `/${lang}${currentPathname}`;
-    // const newPathname = `/${lang}${currentPathname}`;
+    // const newPathname = isDefaultLanguage
+    //   ? currentPathname.replace(`/${language}`, '')
+    //   : `/${lang}${currentPathname}`;
+
+    const newPathname = lang ? `/${lang}${currentPathname}` : `/${currentPathname}`;
+
 
     router.push(
       {
