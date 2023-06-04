@@ -5,7 +5,9 @@ import { LanguageContext } from "@/contexts/LanguageContext";
 import style from "./switch-language.module.css";
 import { useRouter } from "next/router";
 
-const SwitchLanguage: React.FC = () => {
+const SwitchLanguage: React.FC<{
+  isMobile: boolean;
+}> = ({ isMobile }) => {
   const { language, setLanguage } = useContext(LanguageContext)!;
   const { locales } = i18nConfig;
   const router = useRouter();
@@ -29,8 +31,9 @@ const SwitchLanguage: React.FC = () => {
     //   ? currentPathname.replace(`/${language}`, '')
     //   : `/${lang}${currentPathname}`;
 
-    const newPathname = lang ? `/${lang}${currentPathname}` : `/${currentPathname}`;
-
+    const newPathname = lang
+      ? `/${lang}${currentPathname}`
+      : `/${currentPathname}`;
 
     router.push(
       {
@@ -55,7 +58,9 @@ const SwitchLanguage: React.FC = () => {
       />
       {isDropdownOpen && (
         <div
-          className={style.dropdownMenu}
+          className={`${style.dropdownMenu} ${
+            isMobile ? style.dropdownMenuMob : ""
+          }`}
           aria-labelledby="dropdown-basic-button"
         >
           {locales.map((lng) => {

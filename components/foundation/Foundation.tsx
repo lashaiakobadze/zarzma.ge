@@ -2,8 +2,6 @@ import Image from "next/image";
 import style from "./Foundation.module.css";
 
 const Foundation: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
-  console.log("isMobile", isMobile);
-
   return (
     <div className={`${style.foundation} ${
       isMobile ? style.foundationMob : ""

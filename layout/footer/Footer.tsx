@@ -1,22 +1,30 @@
-import React from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import useTranslation from 'next-translate/useTranslation';
+import useTranslation from "next-translate/useTranslation";
 import styles from "./Footer.module.css";
 import SwitchLanguage from "../switch-language/switch-language";
+import MobileContext from "@/contexts/MobileContext";
 
 const Footer: React.FC = () => {
-  const { t, lang } = useTranslation('common');
+  const { isMobile } = useContext(MobileContext);
+  const { t } = useTranslation("common");
 
   return (
-    <footer className={styles.footer}>
+    <footer className={`${styles.footer} ${isMobile ? styles.footerMob : ""}`}>
       <div className={styles.column}>
         <Link
           href={"/foundation"}
-          key={t('charitable-foundation-savane')}
+          key={t("charitable-foundation-savane")}
           legacyBehavior
         >
-          <a className={styles.columnItem}>{t('charitable-foundation-savane')}</a>
+          <a
+            className={`${styles.columnItem} ${
+              isMobile ? styles.columnItemMob : ""
+            }`}
+          >
+            {t("charitable-foundation-savane")}
+          </a>
         </Link>
       </div>
 
@@ -28,17 +36,14 @@ const Footer: React.FC = () => {
           width={13}
           height={23}
         />
-        <Link
-          href={"/contact"}
-          key={t('copyright')}
-          legacyBehavior
-        >
-          <a>{t('copyright')}</a>
+        <Link href={"/contact"} key={t("copyright")} legacyBehavior>
+          <a>{t("copyright")}</a>
         </Link>
       </div>
 
       <div className={styles.column}>
-        <ul>
+        <ul className={`${isMobile ? styles.columnUlMob : ''}`}>
+          <div className={`${styles.socialContent}`}>
           <li>
             <a href="https://www.facebook.com/Zarzmamonastery/" target="_blank">
               <Image
@@ -63,19 +68,22 @@ const Footer: React.FC = () => {
             </a>
           </li>
           <li>
-            <SwitchLanguage />
+            <SwitchLanguage isMobile={isMobile} />
           </li>
-          <li>
-            <Link href={"/contact"} key={t('contact')} legacyBehavior>
-              <a>{t('contact')}</a>
-            </Link>
-          </li>
-          <li>|</li>
-          <li>
-            <Link href={"/foundation"} key={t('donation')} legacyBehavior>
-              <a>{t('donation')}</a>
-            </Link>
-          </li>
+          </div>
+          <div className={`${styles.contactContent}`}>
+            <li>
+              <Link href={"/contact"} key={t("contact")} legacyBehavior>
+                <a>{t("contact")}</a>
+              </Link>
+            </li>
+            <li>|</li>
+            <li>
+              <Link href={"/foundation"} key={t("donation")} legacyBehavior>
+                <a>{t("donation")}</a>
+              </Link>
+            </li>
+          </div>
         </ul>
       </div>
     </footer>
