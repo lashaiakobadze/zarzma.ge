@@ -3,3 +3,8 @@
   width: 100%;
   height: auto;
 }
+
+.imgFluidMob {
+  height: 465px;
+  object-fit: none;
+}

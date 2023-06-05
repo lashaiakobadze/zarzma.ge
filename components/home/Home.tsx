@@ -22,15 +22,16 @@ const videos = [
 interface ArticlesProps {
   articles: Article[];
   loading: boolean;
+  isMobile: boolean;
 }
 
-const Home: React.FC<ArticlesProps> = ({ articles, loading }) => {
-  const { t, lang } = useTranslation('common');
+const Home: React.FC<ArticlesProps> = ({ articles, loading, isMobile }) => {
+  const { t } = useTranslation('common');
 
   return (
     <>
       <div className="main-slider">
-        <SlickSlider images={images} />
+        <SlickSlider images={images} isMobile={isMobile} />
       </div>
       <PageTitle title={t('about')} paddingLeft={111} />
 

@@ -10,9 +10,10 @@ type SlickSliderProps = {
   images: string[];
   slidesToShow?: number;
   slidesToScroll?: number;
+  isMobile?: boolean;
 };
 
-const SlickSlider: React.FC<SlickSliderProps> = ({ images, slidesToShow=1, slidesToScroll=1 }) => {
+const SlickSlider: React.FC<SlickSliderProps> = ({ images, slidesToShow=1, slidesToScroll=1, isMobile }) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -35,7 +36,7 @@ const SlickSlider: React.FC<SlickSliderProps> = ({ images, slidesToShow=1, slide
     <Slider {...settings}>
       {images.map((image, index) => (
         <div key={index} className={style.slider}>
-          <img src={image} className={style.imgFluid}/>
+          <img src={image} className={`${style.imgFluid} ${ isMobile ? style.imgFluidMob : ''}` }/>
         </div>
       ))}
     </Slider>

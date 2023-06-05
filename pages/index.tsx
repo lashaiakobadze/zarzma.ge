@@ -1,16 +1,18 @@
 import Home from "@/components/home/Home";
 import { NextPage } from "next";
 import Head from "next/head";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import getArticles from "./api/articlesApi";
 import { Article } from "./models/article.interface";
 import { DocType } from "./models/docType.enum";
 import useTranslation from 'next-translate/useTranslation';
+import MobileContext from "@/contexts/MobileContext";
 
 const HomePage: NextPage = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const { t, lang } = useTranslation('common');
+  const { isMobile } = useContext(MobileContext);
 
   useEffect(() => {
     let isMounted = true;
@@ -44,7 +46,7 @@ const HomePage: NextPage = () => {
         <link rel="icon" href="/main_assets/logo-zarzma.svg" />
       </Head>
 
-      <Home articles={articles} loading={loading} />
+      <Home isMobile={isMobile} articles={articles} loading={loading} />
     </>
   );
 };
