@@ -7,3 +7,10 @@
   justify-content: space-between;
   gap: 40px;
 }
+
+.aboutMob {
+  border: none;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+}

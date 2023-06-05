@@ -16,12 +16,25 @@
   line-height: 76px;
 }
 
+.pageTitleMob {
+  margin: 0;
+}
+
+.pageTitleMob h2 {
+  font-size: 17px;
+  line-height: 51px;
+}
+
 .pageTitleRow {
   margin-left: 16px;
   width: 100%;
   height: 1px;
   background-color: var(--text-color-primary);
   opacity: 0.15;
+}
+
+.pageTitleRowMob {
+  margin-left: 7px;
 }
 
 .center {

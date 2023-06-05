@@ -2,6 +2,10 @@
   padding: 0 61px 76px 61px;
 }
 
+.aboutContainerMob {
+  padding: 0;
+}
+
 .aboutItems {
   display: flex;
   flex-direction: column;
@@ -9,10 +13,28 @@
   margin-top: 30px;
 }
 
+.aboutItemsMob {
+  gap: 0;
+}
+
 .frescoesImg {
   width: 100%;
   height: auto;
   cursor: pointer;
+}
+
+.frescoesImgMob {
+  width: 100%;
+  height: 265px;
+  object-fit: none;
+  cursor: pointer;
+}
+
+.mural {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .videos {
@@ -23,6 +45,14 @@
   gap: 8px;
 }
 
+.videosMob {
+  padding: 0;
+  flex-direction: column;
+  gap: 0;
+  padding-bottom: 40px;
+}
+
 .videos div {
   width: 100%;
+  display: flex;
 }

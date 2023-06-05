@@ -24,5 +24,6 @@
     "send": "Send",
     "sending": "Sending..."
   },
-  "readMore": "More"
+  "readMore": "More",
+  "readLess": "Less"
 }

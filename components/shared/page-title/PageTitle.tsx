@@ -4,14 +4,20 @@ const PageTitle: React.FC<{
   title: string;
   paddingLeft?: number;
   center?: boolean;
-}> = ({ title, paddingLeft, center }) => {
+  isMobile?: boolean;
+}> = ({ title, paddingLeft, center, isMobile }) => {
+  console.log('isMob', isMobile);
+
   return (
     <div
-      style={{ paddingLeft: `${`${paddingLeft}px`}`, fontSize: "24px" }}
-      className={`${style.pageTitle} ${center ? style.center : ""}`}
+      style={{
+        paddingLeft: `${`${paddingLeft}px`}`,
+        fontSize: "24px",
+      }}
+      className={`${style.pageTitle} ${isMobile ? style.pageTitleMob : ""} ${center ? style.center : ""}`}
     >
       <h2 className={`${center ? style.centerTitle : ""}`}>{title}</h2>
-      <div className={style.pageTitleRow}></div>
+      <div className={`${style.pageTitleRow} ${isMobile ? style.pageTitleRowMob : ""}`}></div>
     </div>
   );
 };
