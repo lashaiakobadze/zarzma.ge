@@ -24,7 +24,6 @@ const Header: React.FC = () => {
   ];
   const playSound = `${BASE_URL}/Zarzma/Chants/ufalo_shegviwyalen.mp3`;
 
-
   const [isPlaying, setIsPlaying] = useState(false);
   const [sound, setSound] = useState<Howl | null>(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -82,13 +81,69 @@ const Header: React.FC = () => {
           </div>
 
           <button
-            className={`${style.hamburger} ${isOpen ? style.hamburgerOpen : ""}`}
+            className={`${style.hamburger} ${
+              isOpen ? style.hamburgerOpen : ""
+            }`}
             onClick={handleClickHamburger}
           >
             <span className={style.line}></span>
             <span className={style.line}></span>
             <span className={style.line}></span>
           </button>
+
+          {isOpen && (
+            <div className={style.overlay}>
+              <nav className={style.navbar}>
+                <div className={style.header__item} onClick={handleClick}>
+                  <Image
+                    src={
+                      !isPlaying
+                        ? "/main_assets/play.svg"
+                        : "/main_assets/stop.svg"
+                    }
+                    alt="play-button"
+                    width={24}
+                    height={24}
+                  />
+                </div>
+
+                <div className={style.header__itemMob}>
+                  <NavigationItem href="/gallery/albums" label={t("photos")} />
+                </div>
+                <div className={style.header__itemMob}>
+                  <NavigationItem href="/gallery/videos" label={t("videos")} />
+                </div>
+                <div className={style.header__itemMob}>
+                  <NavigationItem
+                    href="/gallery/frescoes"
+                    label={t("frescoes")}
+                  />
+                </div>
+                <div className={style.header__itemMob}>
+                  <NavigationItem href="/gallery/icons" label={t("icons")} />
+                </div>
+
+                <div className={style.header__itemMob}>
+                  <NavigationItem href="/chants" label={t("chants")} />
+                </div>
+
+                <div className={style.header__itemMob}>
+                  <NavigationItem
+                    href="/publications"
+                    label={t("publications")}
+                  />
+                </div>
+
+                <div className={style.header__itemMob}>
+                  <NavigationItem href="/handicraft" label={t("handicraft")} />
+                </div>
+
+                <div className={style.header__itemMob}>
+                  <NavigationItem href="/about" label={t("about")} />
+                </div>
+              </nav>
+            </div>
+          )}
         </header>
       ) : (
         <header className={style.header}>
