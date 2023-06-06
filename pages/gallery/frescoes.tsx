@@ -1,6 +1,7 @@
 import Frescoes from "@/components/frescos/Frescoes";
+import MobileContext from "@/contexts/MobileContext";
 import { NextPage } from "next";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import getFrescoes from "../api/frescoesApi";
 import { AlbumID } from "../models/albumID.enum";
 import { AlbumItem } from "../models/albumItem.interface";
@@ -10,6 +11,7 @@ const FrescoesAlbumItemID = AlbumID.FrescoesAlbumItemID;
 const FrescoesPage: NextPage = () => {
   const [frescoesAlbum, setFrescoesAlbum] = useState<AlbumItem[]>([]);
   const [loading, setLoading] = useState(true);
+  const { isMobile } = useContext(MobileContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +22,13 @@ const FrescoesPage: NextPage = () => {
     fetchData();
   }, []);
 
-  return <Frescoes frescoesAlbum={frescoesAlbum[0]} loading={loading} />;
+  return (
+    <Frescoes
+      isMobile={isMobile}
+      frescoesAlbum={frescoesAlbum[0]}
+      loading={loading}
+    />
+  );
 };
 
 export default FrescoesPage;
