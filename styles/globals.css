@@ -70,6 +70,12 @@ a {
   display: none !important;
 }
 
+@media only screen and (max-width: 768px) {
+  .main-slider .slick-dots {
+    bottom: 50px !important;
+  }
+}
+
 .slick-dots li button:before {
   opacity: 0.6 !important;
   color: #fff !important;

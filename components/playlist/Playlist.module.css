@@ -1,3 +1,8 @@
+.chants {
+  border-top: 2px solid var(--border-color);
+  padding-top: 20px;
+}
+
 .playlistContainer {
   padding: 38px 201px;
   display: flex;
@@ -6,9 +11,17 @@
   gap: 10px;
 }
 
+.playlistContainerMob {
+  padding: 20px 0 60px 0;
+}
+
 .playlist {
   display: flex;
   align-items: center;
+}
+
+.playlistMob {
+  padding-right: 20px;
 }
 
 .playlist h3 {
