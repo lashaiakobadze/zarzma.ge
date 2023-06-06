@@ -2,7 +2,7 @@ import useTranslation from "next-translate/useTranslation";
 import { useState } from "react";
 import style from "./ContactForm.module.css";
 
-const ContactForm = () => {
+const ContactForm: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
   const { t, lang } = useTranslation("common");
 
   const [name, setName] = useState("");
@@ -30,7 +30,10 @@ const ContactForm = () => {
   };
 
   return (
-    <form className={style.formGroup} onSubmit={handleSubmit}>
+    <form
+      className={`${style.formGroup} ${isMobile ? style.formGroupMob : ""}`}
+      onSubmit={handleSubmit}
+    >
       <input
         type="text"
         name="name"

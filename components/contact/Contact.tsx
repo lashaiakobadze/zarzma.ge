@@ -8,8 +8,8 @@ import ContactForm from "./form/ContactForm";
 import Loader from "../shared/loader/Loader";
 import useTranslation from "next-translate/useTranslation";
 
-export default function Contact() {
-  const { t, lang } = useTranslation('common');
+const Contact: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
+  const { t } = useTranslation("common");
 
   const zoom = 12;
   const containerStyle = {
@@ -34,12 +34,14 @@ export default function Contact() {
   });
 
   if (!isLoaded) {
-    return <Loader/>;
+    return <Loader />;
   }
 
   return (
     <div className={style.contact}>
-      <div className={style.contactMap}>
+      <div
+        className={`${style.contactMap} ${isMobile ? style.contactMapMob : ""}`}
+      >
         <Map
           options={mapOptions}
           center={mapCenter}
@@ -49,13 +51,23 @@ export default function Contact() {
         />
       </div>
 
-      <PageTitle title={t('contact')} paddingLeft={200} />
+      <PageTitle
+        isMobile={isMobile}
+        title={t("contact")}
+        paddingLeft={isMobile ? 59 : 200}
+      />
 
-      <div className={style.contactContent}>
+      <div
+        className={`${style.contactContent} ${
+          isMobile ? style.contactContentMob : ""
+        }`}
+      >
         <div className={style.contactForm}>
-          <ContactForm />
+          <ContactForm isMobile={isMobile} />
         </div>
-        <div className={style.contactItems}>
+        <div className={`${style.contactItems} ${
+          isMobile ? style.contactItemsMob : ""
+        }`}>
           <div className={style.contactItem}>
             <Image
               src="/main_assets/email-icon.svg"
@@ -113,4 +125,6 @@ export default function Contact() {
       </div>
     </div>
   );
-}
+};
+
+export default Contact;

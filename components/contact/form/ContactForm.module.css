@@ -5,6 +5,11 @@
   margin-bottom: 20px;
 }
 
+.formGroupMob {
+  width: 100%;
+  min-width: 259px;
+}
+
 .formGroup input,
 .formGroup textarea {
   padding: 10px 16px;
