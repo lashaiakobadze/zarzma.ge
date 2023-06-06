@@ -1,4 +1,4 @@
-.aboutItemMob {
+.iconsItemMob {
   width: 100%;
   padding: 42px 50px;
   display: flex;
@@ -6,11 +6,15 @@
   align-items: flex-start;
 }
 
-.even {
+.first {
+  background: #111111;
+}
+
+.second {
   background: rgba(217, 217, 217, 0.45);
 }
 
-.aboutItemContentMob {
+.iconsItemContentMob {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -19,7 +23,7 @@
   gap: 10px;
 }
 
-.aboutItemMob h2 {
+.iconsItemMob h2 {
   white-space: nowrap;
   font-family: "DM-Batonishvili";
   font-style: normal;
@@ -29,7 +33,11 @@
   line-height: 51px;
 }
 
-.aboutItemMob p {
+.first h2 {
+  color: rgba(226, 226, 226, 0.85);
+}
+
+.iconsItemMob p {
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -37,14 +45,17 @@
   color: rgba(32, 32, 32, 0.9);
 }
 
-.aboutItemMob button {
+.first p {
+  color: rgba(226, 226, 226, 0.85);
+}
+
+.iconsItemMob button {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  background-color: var(--bg-color-primary);
   padding: 8px 12px;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(28, 28, 28, 1);
   font-style: normal;
   font-weight: 400;
   font-size: 10px;
@@ -52,16 +63,14 @@
   color: rgba(32, 32, 32, 0.9);
   cursor: pointer;
   margin-top: 5px;
-  color: var(--bg-color-primary);
+  background-color: transparent;
 }
 
-.even button {
-  background-color: var(--btn-secondary);
+.first button {
+  border: 1px solid var(--bg-color-primary);
+  color: rgba(226, 226, 226, 0.85);
 }
 
-.odd button {
-  background-color: var(--btn-primary);
-}
 
 .abbreviate {
   display: -webkit-box;
