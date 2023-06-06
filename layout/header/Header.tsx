@@ -107,38 +107,38 @@ const Header: React.FC = () => {
                   />
                 </div>
 
-                <div className={style.header__itemMob}>
+                <div className={style.header__itemMob} onClick={handleClickHamburger}>
                   <NavigationItem href="/gallery/albums" label={t("photos")} />
                 </div>
-                <div className={style.header__itemMob}>
+                <div className={style.header__itemMob} onClick={handleClickHamburger}>
                   <NavigationItem href="/gallery/videos" label={t("videos")} />
                 </div>
-                <div className={style.header__itemMob}>
+                <div className={style.header__itemMob} onClick={handleClickHamburger}>
                   <NavigationItem
                     href="/gallery/frescoes"
                     label={t("frescoes")}
                   />
                 </div>
-                <div className={style.header__itemMob}>
+                <div className={style.header__itemMob} onClick={handleClickHamburger}>
                   <NavigationItem href="/gallery/icons" label={t("icons")} />
                 </div>
 
-                <div className={style.header__itemMob}>
+                <div className={style.header__itemMob} onClick={handleClickHamburger}>
                   <NavigationItem href="/chants" label={t("chants")} />
                 </div>
 
-                <div className={style.header__itemMob}>
+                <div className={style.header__itemMob} onClick={handleClickHamburger}>
                   <NavigationItem
                     href="/publications"
                     label={t("publications")}
                   />
                 </div>
 
-                <div className={style.header__itemMob}>
+                <div className={style.header__itemMob} onClick={handleClickHamburger}>
                   <NavigationItem href="/handicraft" label={t("handicraft")} />
                 </div>
 
-                <div className={style.header__itemMob}>
+                <div className={style.header__itemMob} onClick={handleClickHamburger}>
                   <NavigationItem href="/about" label={t("about")} />
                 </div>
               </nav>

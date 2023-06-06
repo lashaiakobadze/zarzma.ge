@@ -6,8 +6,6 @@ const PageTitle: React.FC<{
   center?: boolean;
   isMobile?: boolean;
 }> = ({ title, paddingLeft, center, isMobile }) => {
-  console.log('isMob', isMobile);
-
   return (
     <div
       style={{

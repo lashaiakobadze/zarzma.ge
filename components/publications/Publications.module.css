@@ -7,3 +7,9 @@
   justify-content: flex-start;
 }
 
+.publicationsContainerMob {
+  padding: 0;
+  padding-top: 32px;
+  gap: 0;
+}
+

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Article } from "./models/article.interface";
 import getArticles from "./api/articlesApi";
 import { DocType } from "./models/docType.enum";
@@ -6,10 +6,12 @@ import Publications from "@/components/publications/Publications";
 import Loader from "@/components/shared/loader/Loader";
 import useTranslation from "next-translate/useTranslation";
 import { NextPage } from "next";
+import MobileContext from "@/contexts/MobileContext";
 
 const PublicationPage: NextPage = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const { lang } = useTranslation("common");
+  const { isMobile } = useContext(MobileContext);
 
   useEffect(() => {
     let isMounted = true;
@@ -28,7 +30,7 @@ const PublicationPage: NextPage = () => {
   }, [lang]);
 
   return (
-    <>{articles.length ? <Publications articles={articles} /> : <Loader />}</>
+    <>{articles.length ? <Publications isMobile={isMobile} articles={articles} /> : <Loader />}</>
   );
 }
 

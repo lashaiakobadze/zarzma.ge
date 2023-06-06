@@ -1,0 +1,72 @@
+.publicationsItemMob {
+  width: 100%;
+  padding: 42px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.even {
+  background: rgba(217, 217, 217, 0.45);
+}
+
+.publicationsItemMobContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.publicationsItemMob h2 {
+  margin-top: 20px;
+  white-space: nowrap;
+  font-family: "DM-Batonishvili";
+  font-style: normal;
+  font-weight: 400;
+  color: rgba(32, 32, 32, 0.95);
+  font-size: 17px;
+  line-height: 51px;
+}
+
+.publicationsItemMob p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: rgba(32, 32, 32, 0.9);
+}
+
+.publicationsItemMob button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background-color: var(--bg-color-primary);
+  padding: 8px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 14px;
+  color: rgba(32, 32, 32, 0.9);
+  cursor: pointer;
+  margin-top: 5px;
+  color: var(--bg-color-primary);
+}
+
+.even button {
+  background-color: var(--btn-secondary);
+}
+
+.odd button {
+  background-color: var(--btn-primary);
+}
+
+.abbreviate {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
