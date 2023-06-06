@@ -1,3 +1,7 @@
+.homeMob {
+  padding-top: 20px;
+}
+
 .aboutContainer {
   padding: 0 61px 76px 61px;
 }
@@ -14,6 +18,7 @@
 }
 
 .aboutItemsMob {
+  margin-top: 10px;
   gap: 0;
 }
 

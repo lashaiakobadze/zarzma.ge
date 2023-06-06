@@ -34,11 +34,13 @@ const Home: React.FC<ArticlesProps> = ({ articles, loading, isMobile }) => {
         <SlickSlider images={images} isMobile={isMobile} />
       </div>
 
-      <PageTitle
-        isMobile={isMobile}
-        title={t("about")}
-        paddingLeft={isMobile ? 50 : 111}
-      />
+      <div className={`${isMobile ? style.homeMob : ""}`}>
+        <PageTitle
+          isMobile={isMobile}
+          title={t("about")}
+          paddingLeft={isMobile ? 50 : 111}
+        />
+      </div>
 
       <div
         className={`${style.aboutContainer} ${

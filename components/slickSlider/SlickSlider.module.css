@@ -6,5 +6,5 @@
 
 .imgFluidMob {
   height: 465px;
-  object-fit: none;
+  object-fit: cover;
 }

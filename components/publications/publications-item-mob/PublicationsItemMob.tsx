@@ -2,7 +2,6 @@ import PageTitle from "@/components/shared/page-title/PageTitle";
 import { Article } from "@/pages/models/article.interface";
 import useTranslation from "next-translate/useTranslation";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import style from "./PublicationsItemMob.module.css";
 
@@ -30,10 +29,10 @@ const PublicationsItemMob: React.FC<ArticleProps> = ({ article, index }) => {
         }`}
       >
         {article?.photoUrl && BASE_URL && (
-          <Image src={imgUrl} alt={article?.title} width={175} height={223} />
+          <Image src={imgUrl} alt={article?.title} width={163} height={210} />
         )}
 
-        <div className={`${style.publicationsItemMobContent}`}>
+        <div className={`${style.publicationsItemContentMob}`}>
           <PageTitle isMobile={true} title={article?.title} paddingLeft={0} />
           <p
             className={`${isShowMore ? "" : style.abbreviate}

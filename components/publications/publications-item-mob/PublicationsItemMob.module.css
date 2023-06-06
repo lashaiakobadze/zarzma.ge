@@ -10,7 +10,8 @@
   background: rgba(217, 217, 217, 0.45);
 }
 
-.publicationsItemMobContent {
+.publicationsItemContentMob {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -19,7 +20,6 @@
 }
 
 .publicationsItemMob h2 {
-  margin-top: 20px;
   white-space: nowrap;
   font-family: "DM-Batonishvili";
   font-style: normal;
