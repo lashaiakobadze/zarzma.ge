@@ -6,6 +6,7 @@ import useTranslation from "next-translate/useTranslation";
 
 interface VideosProps {
   videos: VideoData[];
+  isMobile: boolean;
 }
 
 const getYoutubeId = (url: string) => {
@@ -13,33 +14,49 @@ const getYoutubeId = (url: string) => {
   return match ? match[1] : "";
 };
 
-const Videos: React.FC<VideosProps> = ({ videos }) => {
-  const { t } = useTranslation('common');
+const Videos: React.FC<VideosProps> = ({ videos, isMobile }) => {
+  const { t } = useTranslation("common");
 
   return (
     <>
       {videos && (
-        <div className={style.mainVideo}>
+        <div
+          className={`${style.mainVideo} ${isMobile ? style.mainVideoMob : ""}`}
+        >
           <VideoPlayer
             videoId={getYoutubeId(videos[0]?.videoURL)}
             width="100%"
-            height="578px"
+            height={isMobile ? "465px" : "578px"}
           />
         </div>
       )}
 
-      <PageTitle title={t('videos')} paddingLeft={118} />
+      <PageTitle
+        isMobile={isMobile}
+        title={t("videos")}
+        paddingLeft={isMobile ? 50 : 118}
+      />
 
       {videos && (
-        <div className={style.videoItems}>
+        <div
+          className={`${style.videoItems} ${
+            isMobile ? style.videoItemsMob : ""
+          }`}
+        >
           {videos.slice(1, videos.length).map((video) => (
-            <div key={video.id} className={style.videoItem}>
-              <PageTitle title={video.name} paddingLeft={0} />
+            <div key={video.id} className={`${style.videoItem} ${
+              isMobile ? style.videoItemMob : ""
+            }`}>
+              <PageTitle
+                isMobile={isMobile}
+                title={video.name}
+                paddingLeft={isMobile ? 20 : 0}
+              />
               <VideoPlayer
                 key={video.id}
                 videoId={getYoutubeId(video.videoURL)}
                 width="100%"
-                height="338px"
+                height={isMobile ? "204px" : "338px"}
               />
             </div>
           ))}
