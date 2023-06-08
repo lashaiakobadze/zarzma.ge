@@ -3,10 +3,15 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+}
 
+.handicraftContainerMob {
+  flex-direction: column;
+  margin-bottom: 60px;
 }
 
 .handicraft {
+  width: 100%;
   position: relative;
   display: flex;
 }
@@ -15,6 +20,7 @@
   position: absolute;
   display: flex;
   justify-content: center;
+  align-items: center;
   top: 0;
   left: 0;
   width: 100%;
@@ -29,7 +35,6 @@
 
 .albumTitle {
   position: absolute;
-  top: 30%;
   font-family: "DM-Batonishvili";
   font-style: normal;
   font-weight: 400;
@@ -38,7 +43,17 @@
   color: var(--bg-color-primary);
 }
 
+.albumTitleMob {
+  font-size: 25px;
+  line-height: 76px; 
+}
+
 .albumImg {
   width: 100%;
   height: 427px;
+  object-fit: cover;
+}
+
+.albumImgMob {
+  height: 344px;
 }

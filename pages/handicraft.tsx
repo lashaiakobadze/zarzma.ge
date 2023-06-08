@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Loader from "@/components/shared/loader/Loader";
 import Handicraft from "@/components/handicraft/Handicraft";
 import { Album } from "./models/album.interface";
 import getAlbums from "./api/albumsApi";
 import { AlbumID } from "./models/albumID.enum";
 import { NextPage } from "next";
+import MobileContext from "@/contexts/MobileContext";
 
 const IncenseAlbumID = AlbumID.IncenseAlbumID;
 const EnamelAlbumID = AlbumID.EnamelAlbumID;
@@ -12,6 +13,7 @@ const EnamelAlbumID = AlbumID.EnamelAlbumID;
 const HandicraftPage: NextPage = () => {
   const [incenseAlbum, setIncenseAlbum] = useState<Album>();
   const [enamelAlbum, setEnamelAlbum] = useState<Album>();
+  const { isMobile } = useContext(MobileContext);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -43,7 +45,7 @@ const HandicraftPage: NextPage = () => {
   return (
     <>
       {!loading ? (
-        <Handicraft incenseAlbum={incenseAlbum!} enamelAlbum={enamelAlbum!} />
+        <Handicraft isMobile={isMobile} incenseAlbum={incenseAlbum!} enamelAlbum={enamelAlbum!} />
       ) : (
         <Loader />
       )}
