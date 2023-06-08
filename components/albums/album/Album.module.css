@@ -2,10 +2,21 @@
   margin: auto;
 }
 
+.albumTitleMob {
+  margin-top: 20px;
+}
+
 .albumSlider {
   margin: 0 auto;
   padding: 28px;
   max-width: 1200px;
+}
+
+.albumSliderMob {
+  display: flex;
+  padding: 0;
+  margin-bottom: 80px;
+  margin-top: 20px;
 }
 
 @media (max-width: 1240px) {
@@ -18,4 +29,47 @@
   .albumSlider {
     max-width: 700px;
   }
+}
+
+.albumItemsContainer {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.albumItem {
+  position: relative;
+  display: flex;
+}
+
+.overlay {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+}
+
+.overlay:hover {
+  background: rgba(0, 0, 0, 0);
+}
+
+.albumItemsTitle {
+  position: absolute;
+  font-family: 'DM-Batonishvili';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 76px;  
+  color: var(--bg-color-primary);
+}
+
+.albumItemsImg {
+  width: 100%;
+  height: 361px;
 }

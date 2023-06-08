@@ -202,8 +202,8 @@ a {
 
 /* Changes for "album-slider" */
 .album-slider .slick-slide img {
-  height: 478px;
-  object-fit: none; /* object-fit: contain; */
+  height: 465px;
+  object-fit: cover; /* object-fit: contain; */
 }
 
 /* Changes for "album-item-slider" */

@@ -1,14 +1,16 @@
 import CurrentAlbum from "@/components/albums/album/Album";
 import Loader from "@/components/shared/loader/Loader";
+import MobileContext from "@/contexts/MobileContext";
 import getAlbums from "@/pages/api/albumsApi";
 import { Album } from "@/pages/models/album.interface";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 
 const albumPage: NextPage = () => {
   const router = useRouter();
   const { albumId } = router.query;
+  const { isMobile } = useContext(MobileContext);
 
   const [album, setAlbum] = useState<Album>();
 
@@ -26,7 +28,11 @@ const albumPage: NextPage = () => {
     }
   }, [albumId, album]);
 
-  return <>{album ? <CurrentAlbum album={album} /> : <Loader />}</>;
+  return (
+    <>
+      {album ? <CurrentAlbum isMobile={isMobile} album={album} /> : <Loader />}
+    </>
+  );
 };
 
 export default albumPage;
