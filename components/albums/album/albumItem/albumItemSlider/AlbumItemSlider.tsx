@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Image from "next/image";
 
 import styles from "./AlbumItemSlider.module.css";
 import { AlbumItem } from "@/pages/models/albumItem.interface";
@@ -16,22 +17,31 @@ const AlbumItemSlider: React.FC<AlbumsSliderProps> = ({
   baseUrl,
   albumItem,
 }) => {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState("");
-  const modalRef = useRef<HTMLDivElement>(null);
-  const modalImg = useRef<HTMLImageElement>(null);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  const totalImages = albumItem.albumPhotos.length;
 
-  const openModal = (imageURL: string) => {
-    setModalIsOpen(true);
-    setSelectedImage(imageURL);
+  const openOverlay = (index: number) => {
+    setIsOverlayOpen(true);
+    setSelectedImageIndex(index);
   };
 
-  const closeModal = () => {
-    setModalIsOpen(false);
+  const closeOverlay = () => {
+    setIsOverlayOpen(false);
   };
 
-  const handleImageClick = (event: React.MouseEvent<HTMLImageElement>) => {
+  const goToPrevImage = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex === 0 ? totalImages - 1 : prevIndex - 1
+    );
+  };
+
+  const goToNextImage = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+    setSelectedImageIndex((prevIndex) =>
+      prevIndex === totalImages - 1 ? 0 : prevIndex + 1
+    );
   };
 
   const settings = {
@@ -42,19 +52,15 @@ const AlbumItemSlider: React.FC<AlbumsSliderProps> = ({
             className={styles.slideImg}
             src={`${baseUrl}${albumItem.albumPhotos[index]?.photoURL}`}
             alt={`Slide ${albumItem.albumPhotos[index]?.name} ${albumItem.albumPhotos[index].id}`}
-            onClick={() => openModal(`${baseUrl}${albumItem.albumPhotos[index]?.photoURL}`)}
           />
         </div>
       );
     },
     dots: true,
-    // dotsClass: styles.slideContainer,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // centerMode: true,
-    // centerPadding: "100px",
     responsive: [
       {
         breakpoint: 2000,
@@ -73,30 +79,48 @@ const AlbumItemSlider: React.FC<AlbumsSliderProps> = ({
       </div>
 
       <Slider {...settings}>
-        {albumItem.albumPhotos.map((albumPhoto: AlbumPhoto) => (
+        {albumItem.albumPhotos.map((albumPhoto: AlbumPhoto, index: number) => (
           <div key={albumItem.id} className={styles.slide}>
             <img
               className={styles.slideImg}
               src={`${baseUrl}${albumPhoto?.photoURL}`}
               alt={`Slide ${albumPhoto?.name} ${albumPhoto?.id}`}
-              onClick={() => openModal(`${baseUrl}${albumPhoto.photoURL}`)}
+              onClick={() => openOverlay(index)}
             />
           </div>
         ))}
       </Slider>
 
-      {modalIsOpen && (
-        <div ref={modalRef} className={styles.modal} onClick={closeModal}>
-          <span className={styles.close} onClick={closeModal}>
+      {/* Overlay */}
+      {isOverlayOpen && (
+        <div className={styles.overlay} onClick={closeOverlay}>
+          <span className={styles.close} onClick={closeOverlay}>
             &times;
           </span>
-
+          {/* Display the selected image */}
           <img
-            ref={modalImg}
-            src={selectedImage}
             className={styles.modalContent}
-            onClick={handleImageClick}
+            src={`${baseUrl}${albumItem.albumPhotos[selectedImageIndex].photoURL}`}
+            alt={`${baseUrl}${albumItem.albumPhotos[selectedImageIndex].name}`}
           />
+
+          {/* Navigation buttons */}
+          <button className={styles.prev} onClick={goToPrevImage}>
+            <Image
+              src="/main_assets/Vector-white.svg"
+              alt="savane"
+              width={20}
+              height={25}
+            />
+          </button>
+          <button className={styles.next} onClick={goToNextImage}>
+            <Image
+              src="/main_assets/Vector-white.svg"
+              alt="savane"
+              width={20}
+              height={25}
+            />
+          </button>
         </div>
       )}
     </>
