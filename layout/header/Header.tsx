@@ -28,30 +28,58 @@ const Header: React.FC = () => {
   const [sound, setSound] = useState<Howl | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const initializeSound = () => {
+  const initializeSound = () => {
+    if (!sound) {
       setSound(
         new Howl({
           src: [playSound],
-          onload: () => {},
+          onload: () => {
+            console.log("handleClick");
+          },
         })
       );
-    };
-
-    initializeSound();
-  }, []);
-
-  const handleClick = () => {
-    if (sound) {
-      if (!sound.playing()) {
-        sound.play();
-        setIsPlaying(true);
-      } else {
-        sound.stop();
-        setIsPlaying(false);
-      }
     }
   };
+
+  const handleClick = () => {
+    if (!sound) {
+      initializeSound();
+    }
+
+    if (sound) {
+      if (isPlaying) {
+        sound.stop();
+      } else {
+        sound.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  // useEffect(() => {
+  //   const initializeSound = () => {
+  //     setSound(
+  //       new Howl({
+  //         src: [playSound],
+  //         onload: () => {},
+  //       })
+  //     );
+  //   };
+
+  //   initializeSound();
+  // }, []);
+
+  // const handleClick = () => {
+  //   if (sound) {
+  //     if (!sound.playing()) {
+  //       sound.play();
+  //       setIsPlaying(true);
+  //     } else {
+  //       sound.stop();
+  //       setIsPlaying(false);
+  //     }
+  //   }
+  // };
 
   const handleClickHamburger = () => {
     setIsOpen(!isOpen);
