@@ -31,9 +31,7 @@ const PublicationPage: NextPage = () => {
 
   return (
     <>{articles.length ?
-      <Loader />
-      //  <Publications isMobile={isMobile} articles={articles} /> 
-       : <Loader />}</>
+       <Publications isMobile={isMobile} articles={articles} /> : <Loader />}</>
   );
 }
 
