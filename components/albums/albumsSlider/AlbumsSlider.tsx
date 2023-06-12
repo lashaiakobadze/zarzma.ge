@@ -25,7 +25,7 @@ const AlbumsSlider: React.FC<AlbumsSliderProps> = ({ albums }) => {
     variableWidth: true,
     responsive: [
       {
-        breakpoint: 2000,
+        breakpoint: 2560,
         settings: {
           slidesToShow: 1,
         },

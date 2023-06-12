@@ -48,20 +48,6 @@
   opacity: 0.7;
 }
 
-.modalContent {
-  animation-name: zoom;
-  animation-duration: 0.6s;
-}
-
-@keyframes zoom {
-  from {
-    transform: scale(0);
-  }
-  to {
-    transform: scale(1);
-  }
-}
-
 .close {
   position: absolute;
   top: 15px;
@@ -79,12 +65,6 @@
   cursor: pointer;
 }
 
-@media only screen and (max-width: 700px) {
-  .modalContent {
-    width: 100%;
-  }
-}
-
 .overlay {
   position: fixed;
   top: 0;
@@ -99,9 +79,20 @@
   transition: opacity 0.3s ease;
 }
 
-.overlay img {
+.modalContent {
   max-width: 100%;
   max-height: 80vh;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 .overlay button {

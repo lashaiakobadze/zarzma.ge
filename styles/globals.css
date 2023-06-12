@@ -238,7 +238,7 @@ a {
 
 .album-item-slider .slick-dots .slick-active {
   scroll-snap-align: center;
-  padding: 0 10px;  
+  padding: 0 10px;
   transition: padding 0.5s ease;
 }
 

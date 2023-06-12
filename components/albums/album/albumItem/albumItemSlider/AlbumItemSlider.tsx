@@ -63,7 +63,7 @@ const AlbumItemSlider: React.FC<AlbumsSliderProps> = ({
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 2000,
+        breakpoint: 2560,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,

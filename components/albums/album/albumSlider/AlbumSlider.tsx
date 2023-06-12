@@ -23,7 +23,7 @@ const AlbumSlider: React.FC<AlbumsSliderProps> = ({ baseUrl, albumItems }) => {
     variableWidth: true,
     responsive: [
       {
-        breakpoint: 2000,
+        breakpoint: 2560,
         settings: {
           slidesToShow: 1,
         },

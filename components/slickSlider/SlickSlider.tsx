@@ -23,7 +23,7 @@ const SlickSlider: React.FC<SlickSliderProps> = ({ images, slidesToShow=1, slide
     autoplay: true,
     responsive: [
       {
-        breakpoint: 2000, // Adjust the breakpoint as needed
+        breakpoint: 2560, // Adjust the breakpoint as needed
         settings: {
           slidesToShow, // Show two slides in one slide at this breakpoint
           slidesToScroll, // Scroll two slides at a time at this breakpoint

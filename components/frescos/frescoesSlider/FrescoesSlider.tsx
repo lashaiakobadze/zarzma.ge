@@ -43,7 +43,7 @@ const FrescoesSlider: React.FC<FrescoesSliderProps> = ({
     variableWidth: true,
     responsive: [
       {
-        breakpoint: 2000,
+        breakpoint: 2560,
         settings: {
           slidesToShow: 1,
         },
