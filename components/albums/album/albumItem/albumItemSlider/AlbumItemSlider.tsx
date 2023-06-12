@@ -5,8 +5,8 @@ import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 
 import styles from "./AlbumItemSlider.module.css";
-import { AlbumItem } from "@/pages/models/albumItem.interface";
-import { AlbumPhoto } from "@/pages/models/albumPhoto.interface";
+import { AlbumItem } from "@/models/albumItem.interface";
+import { AlbumPhoto } from "@/models/albumPhoto.interface";
 
 interface AlbumsSliderProps {
   baseUrl: string;

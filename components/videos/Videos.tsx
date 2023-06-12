@@ -1,5 +1,5 @@
 import PageTitle from "../shared/page-title/PageTitle";
-import { VideoData } from "../../pages/models/video.interface";
+import { VideoData } from "../../models/video.interface";
 import VideoPlayer from "./videoPlayer/VideoPlayer";
 import style from "./Videos.module.css";
 import useTranslation from "next-translate/useTranslation";

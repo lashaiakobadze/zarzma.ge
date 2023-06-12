@@ -1,6 +1,6 @@
 import Loader from "../shared/loader/Loader";
 import style from "./Albums.module.css";
-import { Album } from "@/pages/models/album.interface";
+import { Album } from "@/models/album.interface";
 import PageTitle from "../shared/page-title/PageTitle";
 import AlbumsSlider from "./albumsSlider/AlbumsSlider";
 import useTranslation from "next-translate/useTranslation";

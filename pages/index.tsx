@@ -3,8 +3,8 @@ import { NextPage } from "next";
 import Head from "next/head";
 import { useContext, useEffect, useState } from "react";
 import getArticles from "./api/articlesApi";
-import { Article } from "./models/article.interface";
-import { DocType } from "./models/docType.enum";
+import { Article } from "../models/article.interface";
+import { DocType } from "../models/docType.enum";
 import useTranslation from 'next-translate/useTranslation';
 import MobileContext from "@/contexts/MobileContext";
 

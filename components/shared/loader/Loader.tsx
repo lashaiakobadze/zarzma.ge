@@ -7,7 +7,7 @@ interface LoaderProps {
 
 const Loader: React.FC<LoaderProps> = ({ size }) => {
   return (
-    <div className={style.loaderContainer} style={{ width: size ? size : 0, height: size ? size : size }}> 
+    <div className={style.loaderContainer} style={{ height: size ? size : size }}> 
       <div className={style.ldsRing}><div></div><div></div><div></div><div></div></div>
     </div>
   );

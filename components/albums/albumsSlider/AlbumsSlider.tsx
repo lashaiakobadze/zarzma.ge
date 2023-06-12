@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./AlbumsSlider.module.css";
-import { Album } from "@/pages/models/album.interface";
+import { Album } from "@/models/album.interface";
 import Link from "next/link";
 import { useRouter } from "next/router";
 

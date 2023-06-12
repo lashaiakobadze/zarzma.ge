@@ -1,4 +1,4 @@
-import { AlbumItem } from "@/pages/models/albumItem.interface";
+import { AlbumItem } from "@/models/albumItem.interface";
 import Loader from "../shared/loader/Loader";
 import style from "./Frescoes.module.css";
 import FrescoesSlider from "./frescoesSlider/FrescoesSlider";

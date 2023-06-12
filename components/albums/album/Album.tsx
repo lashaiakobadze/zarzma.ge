@@ -1,9 +1,9 @@
-import { Album } from "@/pages/models/album.interface";
+import { Album } from "@/models/album.interface";
 import PageTitle from "@/components/shared/page-title/PageTitle";
 import style from "./Album.module.css";
 import SlickSlider from "@/components/slickSlider/SlickSlider";
 import AlbumSlider from "./albumSlider/AlbumSlider";
-import { AlbumItem } from "@/pages/models/albumItem.interface";
+import { AlbumItem } from "@/models/albumItem.interface";
 import Link from "next/link";
 
 const BASE_URL = process.env.dataUrl + "/";

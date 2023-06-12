@@ -1,6 +1,6 @@
 import PageTitle from "@/components/shared/page-title/PageTitle";
-import * as Item from "@/pages/models/albumItem.interface";
-import { AlbumPhoto } from "@/pages/models/albumPhoto.interface";
+import * as Item from "@/models/albumItem.interface";
+import { AlbumPhoto } from "@/models/albumPhoto.interface";
 import { useState } from "react";
 import Image from "next/image";
 import style from "./AlbumItem.module.css";

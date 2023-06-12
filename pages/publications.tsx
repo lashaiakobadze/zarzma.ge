@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Article } from "./models/article.interface";
+import { Article } from "../models/article.interface";
 import getArticles from "./api/articlesApi";
-import { DocType } from "./models/docType.enum";
+import { DocType } from "../models/docType.enum";
 import Publications from "@/components/publications/Publications";
 import Loader from "@/components/shared/loader/Loader";
 import useTranslation from "next-translate/useTranslation";
@@ -30,7 +30,10 @@ const PublicationPage: NextPage = () => {
   }, [lang]);
 
   return (
-    <>{articles.length ? <Publications isMobile={isMobile} articles={articles} /> : <Loader />}</>
+    <>{articles.length ?
+      <Loader />
+      //  <Publications isMobile={isMobile} articles={articles} /> 
+       : <Loader />}</>
   );
 }
 

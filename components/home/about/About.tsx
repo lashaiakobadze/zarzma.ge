@@ -1,4 +1,4 @@
-import { Article } from "@/pages/models/article.interface";
+import { Article } from "@/models/article.interface";
 import AboutItem from "./about-item/AboutItem";
 import style from "./About.module.css";
 

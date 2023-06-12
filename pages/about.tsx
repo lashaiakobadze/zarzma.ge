@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import About from "@/components/about/About";
-import { Article } from "./models/article.interface";
+import { Article } from "../models/article.interface";
 import getArticles from "./api/articlesApi";
-import { DocType } from "./models/docType.enum";
+import { DocType } from "../models/docType.enum";
 import useTranslation from "next-translate/useTranslation";
 import { NextPage } from "next";
 import MobileContext from "@/contexts/MobileContext";

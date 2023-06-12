@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { useEffect } from "react";
 import { NextPage } from "next";
 import Videos from "@/components/videos/Videos";
-import { VideoData } from "@/pages/models/video.interface";
+import { VideoData } from "@/models/video.interface";
 import getVideos from "../api/videosApi";
 import Loader from "@/components/shared/loader/Loader";
 import MobileContext from "@/contexts/MobileContext";

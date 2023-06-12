@@ -1,4 +1,4 @@
-import { Article } from "@/pages/models/article.interface";
+import { Article } from "@/models/article.interface";
 import Link from "next/link";
 import Loader from "../shared/loader/Loader";
 import PageTitle from "../shared/page-title/PageTitle";

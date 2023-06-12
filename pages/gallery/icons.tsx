@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import getArticles from "../api/articlesApi";
-import { Article } from "../models/article.interface";
-import { DocType } from "../models/docType.enum";
+import { Article } from "../../models/article.interface";
+import { DocType } from "../../models/docType.enum";
 import Icons from "@/components/icons/Icons";
 import Loader from "@/components/shared/loader/Loader";
 import useTranslation from "next-translate/useTranslation";

@@ -1,4 +1,4 @@
-import { Album } from "@/pages/models/album.interface";
+import { Album } from "@/models/album.interface";
 import Link from "next/link";
 import PageTitle from "../shared/page-title/PageTitle";
 import styles from "./Handicraft.module.css";

@@ -1,4 +1,4 @@
-import { Article } from "@/pages/models/article.interface";
+import { Article } from "@/models/article.interface";
 import Image from "next/image";
 import style from "./IconsItem.module.css";
 

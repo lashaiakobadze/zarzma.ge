@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import Loader from "@/components/shared/loader/Loader";
 import Handicraft from "@/components/handicraft/Handicraft";
-import { Album } from "./models/album.interface";
+import { Album } from "../models/album.interface";
 import getAlbums from "./api/albumsApi";
-import { AlbumID } from "./models/albumID.enum";
+import { AlbumID } from "../models/albumID.enum";
 import { NextPage } from "next";
 import MobileContext from "@/contexts/MobileContext";
 

@@ -3,8 +3,8 @@ import MobileContext from "@/contexts/MobileContext";
 import { NextPage } from "next";
 import React, { useContext, useEffect, useState } from "react";
 import getFrescoes from "../api/frescoesApi";
-import { AlbumID } from "../models/albumID.enum";
-import { AlbumItem } from "../models/albumItem.interface";
+import { AlbumID } from "../../models/albumID.enum";
+import { AlbumItem } from "../../models/albumItem.interface";
 
 const FrescoesAlbumItemID = AlbumID.FrescoesAlbumItemID;
 

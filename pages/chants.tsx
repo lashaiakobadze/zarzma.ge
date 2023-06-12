@@ -4,7 +4,7 @@ import MobileContext from "@/contexts/MobileContext";
 import { NextPage } from "next";
 import React, { useContext, useEffect, useState } from "react";
 import getChants from "./api/chantsApi";
-import { Chant } from "./models/chant.interface";
+import { Chant } from "../models/chant.interface";
 
 const ChantsPage: NextPage = () => {
   const [chants, setChants] = useState<Chant[]>([]);

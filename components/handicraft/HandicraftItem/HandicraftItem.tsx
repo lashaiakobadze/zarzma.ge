@@ -1,6 +1,6 @@
 import PageTitle from "@/components/shared/page-title/PageTitle";
-import { Album } from "@/pages/models/album.interface";
-import { AlbumItem } from "@/pages/models/albumItem.interface";
+import { Album } from "@/models/album.interface";
+import { AlbumItem } from "@/models/albumItem.interface";
 import Link from "next/link";
 import styles from "./HandicraftItem.module.css";
 

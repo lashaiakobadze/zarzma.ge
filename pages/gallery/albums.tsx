@@ -3,8 +3,8 @@ import MobileContext from "@/contexts/MobileContext";
 import { NextPage } from "next";
 import React, { useContext, useEffect, useState } from "react";
 import getAlbums from "../api/albumsApi";
-import { Album } from "../models/album.interface";
-import { AlbumType } from "../models/albumType.enum";
+import { Album } from "../../models/album.interface";
+import { AlbumType } from "../../models/albumType.enum";
 
 const AlbumsPage: NextPage = () => {
   const [albums, setAlbums] = useState<Album[]>([]);

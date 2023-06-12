@@ -3,7 +3,7 @@ import AudioPlayer from "react-h5-audio-player";
 import styles from "./Playlist.module.css";
 import "react-h5-audio-player/lib/styles.css";
 import PageTitle from "../shared/page-title/PageTitle";
-import { Chant } from "@/pages/models/chant.interface";
+import { Chant } from "@/models/chant.interface";
 import useTranslation from "next-translate/useTranslation";
 
 interface PlaylistProps {

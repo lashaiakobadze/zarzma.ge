@@ -2,7 +2,7 @@ import AlbumItem from "@/components/albums/album/albumItem/AlbumItem";
 import Loader from "@/components/shared/loader/Loader";
 import MobileContext from "@/contexts/MobileContext";
 import getAlbumItem from "@/pages/api/albumItemApi";
-import * as Item from "@/pages/models/albumItem.interface";
+import * as Item from "@/models/albumItem.interface";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useState, useEffect, useContext } from "react";

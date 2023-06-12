@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./FrescoesSlider.module.css";
-import { AlbumPhoto } from "@/pages/models/albumPhoto.interface";
+import { AlbumPhoto } from "@/models/albumPhoto.interface";
 
 interface FrescoesSliderProps {
   slides: AlbumPhoto[];

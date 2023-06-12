@@ -1,5 +1,5 @@
 import Loader from "@/components/shared/loader/Loader";
-import { Article } from "@/pages/models/article.interface";
+import { Article } from "@/models/article.interface";
 import AboutItemMob from "./about-item-mob/AboutItemMob";
 import AboutItem from "./about-item/AboutItem";
 import style from "./About.module.css";

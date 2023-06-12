@@ -1,4 +1,4 @@
-import { Article } from "@/pages/models/article.interface";
+import { Article } from "@/models/article.interface";
 import style from "./Publications.module.css";
 import PublicationsItem from "./publications-item/PublicationsItem";
 import PublicationsItemMob from "./publications-item-mob/PublicationsItemMob";

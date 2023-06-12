@@ -1,4 +1,4 @@
-import { Article } from "@/pages/models/article.interface";
+import { Article } from "@/models/article.interface";
 import IconsItemMob from "./icons-item-mob/IconsItemMob";
 import IconsItem from "./icons-item/IconsItem";
 import style from "./Icons.module.css";
