@@ -28,7 +28,6 @@ const Header: React.FC = () => {
   const [sound, setSound] = useState<Howl | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-
   useEffect(() => {
     const initializeSound = () => {
       setSound(
@@ -66,8 +65,12 @@ const Header: React.FC = () => {
             <Image
               src="/main_assets/logo-zarzma.svg"
               alt="logo-zarzma"
-              width={32}
-              height={34}
+              width={43}
+              height={47}
+              priority // Optional: prioritize loading this image
+              loading="eager" // Optional: load the image eagerly
+              quality={100} // Optional: specify the image quality (0-100)
+              unoptimized={true} // Optional: enable optimization for SVG
             />
           </a>
 
