@@ -34,6 +34,13 @@
   white-space: nowrap;
 }
 
+@media (max-width: 1024px) {
+  .header__title {
+    font-size: 25px;
+    line-height: 76px;
+  }
+}
+
 .header__titleMob {
   font-size: 25px;
   line-height: 76px;

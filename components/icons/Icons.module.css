@@ -7,6 +7,12 @@
   justify-content: flex-start;
 }
 
+@media (max-width: 1024px) {
+  .iconsContainer {
+    padding: 56px;
+  }
+}
+
 .iconsContainerMob {
   padding: 0;
   padding-bottom: 80px;

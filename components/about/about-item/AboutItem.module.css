@@ -8,6 +8,12 @@
   border: 1px solid rgba(32, 32, 32, 0.15)
 }
 
+@media (max-width: 1240px) {
+  .aboutItem {
+    padding: 56px;
+  }
+}
+
 .aboutItem:hover {
   background: rgba(217, 217, 217, 0.45);
 }

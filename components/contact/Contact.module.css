@@ -26,6 +26,12 @@
   padding-right: 200px;
 }
 
+@media (max-width: 1024px) {
+  .contactContent {
+    padding: 56px;
+  }
+}
+
 .contactContentMob {
   padding: 0 50px;
   margin-top: 32px;
