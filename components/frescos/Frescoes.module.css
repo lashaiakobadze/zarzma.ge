@@ -13,6 +13,12 @@
   justify-content: center;
 }
 
+.frescoesLoader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .frescoesItems {
   width: 100%;
   display: flex;

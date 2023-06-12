@@ -45,7 +45,9 @@ const Frescoes: React.FC<FrescoesProps> = ({
       </div>
 
       {loading ? (
-        <Loader />
+        <div className={style.frescoesLoader}>
+          <Loader size={"298px"} />
+        </div>
       ) : (
         <>
           {!isMobile ? (

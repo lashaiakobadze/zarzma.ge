@@ -5,10 +5,9 @@ interface LoaderProps {
   size?: string;
 }
 
-const Loader: React.FC<LoaderProps> = ({ size = '50px' }) => {
+const Loader: React.FC<LoaderProps> = ({ size }) => {
   return (
-    // style={{ width: size, height: size }}
-    <div className={style.loaderContainer}> 
+    <div className={style.loaderContainer} style={{ width: size ? size : 0, height: size ? size : size }}> 
       <div className={style.ldsRing}><div></div><div></div><div></div><div></div></div>
     </div>
   );

@@ -34,10 +34,7 @@ const Header: React.FC = () => {
       setSound(
         new Howl({
           src: [playSound],
-          onload: () => {
-            // The sound file has finished loading
-            console.log("Sound loaded");
-          },
+          onload: () => {},
         })
       );
     };

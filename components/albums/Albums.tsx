@@ -56,7 +56,7 @@ const Albums: React.FC<AlbumsProps> = ({ albums, loading, isMobile }) => {
           }`}
         >
           {loading ? (
-            <Loader />
+            <Loader size={'298px'}/>
           ) : (
             <>
               {!isMobile ? (
