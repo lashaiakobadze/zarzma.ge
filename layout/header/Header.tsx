@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
 import style from "./Header.module.css";
@@ -28,28 +28,32 @@ const Header: React.FC = () => {
   const [sound, setSound] = useState<Howl | null>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const initializeSound = () => {
-    if (!sound) {
+
+  useEffect(() => {
+    const initializeSound = () => {
       setSound(
         new Howl({
           src: [playSound],
+          onload: () => {
+            // The sound file has finished loading
+            console.log("Sound loaded");
+          },
         })
       );
-    }
-  };
+    };
+
+    initializeSound();
+  }, []);
 
   const handleClick = () => {
-    if (!sound) {
-      initializeSound();
-    }
-
     if (sound) {
-      if (isPlaying) {
-        sound.stop();
-      } else {
+      if (!sound.playing()) {
         sound.play();
+        setIsPlaying(true);
+      } else {
+        sound.stop();
+        setIsPlaying(false);
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -107,38 +111,62 @@ const Header: React.FC = () => {
                   />
                 </div>
 
-                <div className={style.header__itemMob} onClick={handleClickHamburger}>
+                <div
+                  className={style.header__itemMob}
+                  onClick={handleClickHamburger}
+                >
                   <NavigationItem href="/gallery/albums" label={t("photos")} />
                 </div>
-                <div className={style.header__itemMob} onClick={handleClickHamburger}>
+                <div
+                  className={style.header__itemMob}
+                  onClick={handleClickHamburger}
+                >
                   <NavigationItem href="/gallery/videos" label={t("videos")} />
                 </div>
-                <div className={style.header__itemMob} onClick={handleClickHamburger}>
+                <div
+                  className={style.header__itemMob}
+                  onClick={handleClickHamburger}
+                >
                   <NavigationItem
                     href="/gallery/frescoes"
                     label={t("frescoes")}
                   />
                 </div>
-                <div className={style.header__itemMob} onClick={handleClickHamburger}>
+                <div
+                  className={style.header__itemMob}
+                  onClick={handleClickHamburger}
+                >
                   <NavigationItem href="/gallery/icons" label={t("icons")} />
                 </div>
 
-                <div className={style.header__itemMob} onClick={handleClickHamburger}>
+                <div
+                  className={style.header__itemMob}
+                  onClick={handleClickHamburger}
+                >
                   <NavigationItem href="/chants" label={t("chants")} />
                 </div>
 
-                <div className={style.header__itemMob} onClick={handleClickHamburger}>
+                <div
+                  className={style.header__itemMob}
+                  onClick={handleClickHamburger}
+                >
                   <NavigationItem
                     href="/publications"
                     label={t("publications")}
                   />
                 </div>
 
-                <div className={style.header__itemMob} onClick={handleClickHamburger}>
+                <div
+                  className={style.header__itemMob}
+                  onClick={handleClickHamburger}
+                >
                   <NavigationItem href="/handicraft" label={t("handicraft")} />
                 </div>
 
-                <div className={style.header__itemMob} onClick={handleClickHamburger}>
+                <div
+                  className={style.header__itemMob}
+                  onClick={handleClickHamburger}
+                >
                   <NavigationItem href="/about" label={t("about")} />
                 </div>
               </nav>
