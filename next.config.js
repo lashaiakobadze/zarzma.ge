@@ -2,7 +2,6 @@
 const nextTranslate = require("next-translate-plugin");
 
 const nextConfig = {
-  output: 'export',
   reactStrictMode: false,
   env: {
     GOOGLE_MAPS_API_KEY: "your-api-key-here",
