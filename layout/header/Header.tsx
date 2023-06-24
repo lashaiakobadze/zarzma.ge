@@ -98,7 +98,6 @@ const Header: React.FC = () => {
               priority // Optional: prioritize loading this image
               loading="eager" // Optional: load the image eagerly
               quality={100} // Optional: specify the image quality (0-100)
-              unoptimized={true} // Optional: enable optimization for SVG
             />
           </a>
 

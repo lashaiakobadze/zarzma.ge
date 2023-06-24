@@ -49,8 +49,8 @@ const Footer: React.FC = () => {
               <Image
                 src="/main_assets/facebook.svg"
                 alt="facebook"
-                width={15}
-                height={14}
+                width={25}
+                height={25}
               />
             </a>
           </li>
@@ -62,8 +62,8 @@ const Footer: React.FC = () => {
               <Image
                 src="/main_assets/youtube.svg"
                 alt="youtube"
-                width={19}
-                height={19}
+                width={30}
+                height={30}
               />
             </a>
           </li>
