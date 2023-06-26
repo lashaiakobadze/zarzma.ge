@@ -91,7 +91,7 @@ const Header: React.FC = () => {
         <header className={style.header}>
           <a href={`/${lang}`}>
             <Image
-              src="/main_assets/logo-zarzma.svg"
+              src="/main_assets/logo-zarzma-mob.svg"
               alt="logo-zarzma"
               width={43}
               height={47}
