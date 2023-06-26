@@ -49,13 +49,15 @@ const SwitchLanguage: React.FC<{
 
   return (
     <div className={style.dropdown}>
-      <Image
-        src={`/main_assets/flag-${language}.svg`}
-        alt={`flag-${language}`}
-        onClick={handleDropdownToggle}
-        width={30}
-        height={20}
-      />
+      {language && (
+        <Image
+          src={`/main_assets/flag-${language}.svg`}
+          alt={`flag-${language}`}
+          onClick={handleDropdownToggle}
+          width={30}
+          height={20}
+        />
+      )}
       {isDropdownOpen && (
         <div
           className={`${style.dropdownMenu} ${
