@@ -79,13 +79,13 @@ const Home: React.FC<ArticlesProps> = ({ articles, loading, isMobile }) => {
             <div className={style.mural}>
               <img
                 className={style.frescoesImgMob}
-                src="/main_assets/png/mural-1.png"
+                src="/main_assets/png/mural-1.webp"
                 alt="frescoes"
                 height={265}
               />
               <img
                 className={style.frescoesImgMob}
-                src="/main_assets/png/mural-2.png"
+                src="/main_assets/png/mural-2.webp"
                 alt="frescoes"
                 height={265}
               />
