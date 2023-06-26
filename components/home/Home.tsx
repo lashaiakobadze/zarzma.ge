@@ -9,9 +9,9 @@ import style from "./Home.module.css";
 import useTranslation from "next-translate/useTranslation";
 
 const images = [
-  "../slider_assets/slider1.png",
-  "../slider_assets/slider2.png",
-  "../slider_assets/slider3.png",
+  "../slider_assets/slider1.webp",
+  "../slider_assets/slider2.webp",
+  "../slider_assets/slider3.webp",
 ];
 
 const videos = [
