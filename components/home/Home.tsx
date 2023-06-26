@@ -96,7 +96,7 @@ const Home: React.FC<ArticlesProps> = ({ articles, loading, isMobile }) => {
         <Link href={"/gallery/frescoes"} legacyBehavior className={style.mural}>
           <img
             className={style.frescoesImg}
-            src="/main_assets/png/Mural-Images.png"
+            src="/main_assets/png/Mural-Images.webp"
             alt="frescoes"
           />
         </Link>
