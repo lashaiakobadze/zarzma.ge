@@ -54,8 +54,8 @@ const SwitchLanguage: React.FC<{
           src={`/main_assets/flag-${language}.svg`}
           alt={`flag-${language}`}
           onClick={handleDropdownToggle}
-          width={30}
-          height={20}
+          width={35}
+          height={25}
         />
       )}
       {isDropdownOpen && (
@@ -74,8 +74,8 @@ const SwitchLanguage: React.FC<{
                 src={`/main_assets/flag-${lng}.svg`}
                 alt={`flag-${lng}`}
                 onClick={() => handleLanguageChange(lng)}
-                width={30}
-                height={20}
+                width={35}
+                height={25}
               />
             );
           })}

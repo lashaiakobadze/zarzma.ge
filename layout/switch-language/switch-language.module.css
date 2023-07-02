@@ -13,9 +13,9 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  transition: all 0.3s ease;
+  gap: 5px;
 }
 
 .dropdownMenuMob {
-  top: 110%;
+  /* top: 110%; */
 }
