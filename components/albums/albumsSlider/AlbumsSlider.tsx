@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from "./AlbumsSlider.module.css";
 import { Album } from "@/models/album.interface";
 import Link from "next/link";
-import { useRouter } from "next/router";
 
 interface AlbumsSliderProps {
   albums: Album[];

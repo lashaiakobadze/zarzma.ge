@@ -81,6 +81,7 @@ const AlbumItem: React.FC<AlbumItemProps> = ({ albumItem, isMobile }) => {
                   &times;
                 </span>
                 <img
+                  className={style.modalContent}
                   src={`${BASE_URL}${albumItem.albumPhotos[selectedImageIndex].photoURL}`}
                   alt={`${BASE_URL}${albumItem.albumPhotos[selectedImageIndex].name}`}
                 />
