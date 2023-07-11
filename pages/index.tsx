@@ -43,7 +43,7 @@ const HomePage: NextPage = () => {
           content={t('description')}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/main_assets/logo-zarzma.svg" />
+        <link rel="icon" href="/main_assets/logo.png" />
       </Head>
 
       <Home isMobile={isMobile} articles={articles} loading={loading} />
