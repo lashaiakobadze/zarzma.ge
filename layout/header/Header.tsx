@@ -90,7 +90,12 @@ const Header: React.FC = () => {
       {isMobile ? (
         <header className={style.header}>
           <a href={`/${lang}`}>
-            <Image
+            <img 
+              src="/main_assets/logo.png" 
+              alt="logo"               
+              height={47}
+            />
+            {/* <Image
               src="/main_assets/logo-zarzma-mob.svg"
               alt="logo-zarzma"
               width={43}
@@ -98,7 +103,7 @@ const Header: React.FC = () => {
               priority // Optional: prioritize loading this image
               loading="eager" // Optional: load the image eagerly
               quality={100} // Optional: specify the image quality (0-100)
-            />
+            /> */}
           </a>
 
           <div className={`${style.header__item} ${style.header__itemCenter}`}>
