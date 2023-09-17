@@ -1,54 +1,22 @@
 import Image from "next/image";
 import style from "./Contact.module.css";
-import Map from "./map/Map";
-import { useMemo } from "react";
-import { useLoadScript } from "@react-google-maps/api";
 import PageTitle from "../shared/page-title/PageTitle";
-import ContactForm from "./form/ContactForm";
-import Loader from "../shared/loader/Loader";
 import useTranslation from "next-translate/useTranslation";
 
 const Contact: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
   const { t } = useTranslation("common");
-
-  const zoom = 12;
-  const containerStyle = {
-    width: "100%",
-    height: "100%",
-  };
-  const libraries = useMemo(() => ["places"], []);
-  const mapCenter = useMemo(() => ({ lat: 41.51951, lng: 42.16611 }), []);
-
-  const mapOptions = useMemo<google.maps.MapOptions>(
-    () => ({
-      disableDefaultUI: true,
-      clickableIcons: true,
-      scrollwheel: false,
-    }),
-    []
-  );
-
-  const { isLoaded } = useLoadScript({
-    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY as string,
-    libraries: libraries as any,
-  });
-
-  if (!isLoaded) {
-    return <Loader />;
-  }
 
   return (
     <div className={style.contact}>
       <div
         className={`${style.contactMap} ${isMobile ? style.contactMapMob : ""}`}
       >
-        <Map
-          options={mapOptions}
-          center={mapCenter}
-          zoom={zoom}
-          mapContainerStyle={containerStyle}
-          mapTypeId={google.maps.MapTypeId.ROADMAP}
-        />
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5959.841963097225!2d42.64630789457758!3d41.6790499482468!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x405d33666b410d49%3A0x3946d4eb9b23a17d!2sZarzma!5e0!3m2!1sen!2sge!4v1694966090844!5m2!1sen!2sge"
+          width="100%"
+          height="100%"
+          loading="lazy"
+        ></iframe>
       </div>
 
       <PageTitle
@@ -63,11 +31,7 @@ const Contact: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
         }`}
       >
         <div className={style.contactForm}>
-          <ContactForm isMobile={isMobile} />
-        </div>
-        <div className={`${style.contactItems} ${
-          isMobile ? style.contactItemsMob : ""
-        }`}>
+        {/* <ContactForm isMobile={isMobile} /> */}
           <div className={style.contactItem}>
             <Image
               src="/main_assets/email-icon.svg"
@@ -89,7 +53,12 @@ const Contact: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
             />
             <a href="tel:+995595957888">+995 595 95 78 88</a>
           </div>
-
+        </div>
+        <div
+          className={`${style.contactItems} ${
+            isMobile ? style.contactItemsMob : ""
+          }`}
+        >
           <div className={style.contactItem}>
             <Image
               src="/main_assets/telegram-icon.svg"
