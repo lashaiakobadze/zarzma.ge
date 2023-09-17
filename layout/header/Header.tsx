@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import Image from "next/image";
 import useTranslation from "next-translate/useTranslation";
 import style from "./Header.module.css";
 import NavigationItem from "@/components/shared/navItem/NavItem";
 import Link from "next/link";
-import { Howl } from "howler";
 import MobileContext from "@/contexts/MobileContext";
 
 const BASE_URL = process.env.dataUrl;
+const playSound = `${BASE_URL}/Zarzma/Chants/ufalo_shegviwyalen.mp3`;
 
 const Header: React.FC = () => {
   const { t, lang } = useTranslation("common");
@@ -22,64 +22,36 @@ const Header: React.FC = () => {
     { label: t("frescoes"), href: "/gallery/frescoes" },
     { label: t("icons"), href: "/gallery/icons" },
   ];
-  const playSound = `${BASE_URL}/Zarzma/Chants/ufalo_shegviwyalen.mp3`;
 
   const [isPlaying, setIsPlaying] = useState(false);
-  const [sound, setSound] = useState<Howl | null>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [isFirstPlay, setIsFirstPlay] = useState(true);
+  const audioRef = useRef(null) as any;
 
-  const initializeSound = () => {
-    if (!sound) {
-      setSound(
-        new Howl({
-          src: [playSound],
-          onload: () => {
-            console.log("handleClick");
-          },
-        })
-      );
+  const playSong = () => {
+    if (isFirstPlay) {
+      audioRef.current = new Audio(playSound);
+      audioRef.current.preload = 'auto';
+      setIsFirstPlay(false);
+      audioRef.current.play();
+      setIsPlaying(true);
+
+      return () => {
+        // Cleanup when the component unmounts
+        audioRef.current.pause();
+      };
+    } else {
+      setIsPlaying(true);
+  
+      audioRef.current.play();
     }
   };
 
-  const handleClick = () => {
-    if (!sound) {
-      initializeSound();
-    }
+  const stopSong = () => {
+    setIsPlaying(false);
 
-    if (sound) {
-      if (isPlaying) {
-        sound.stop();
-      } else {
-        sound.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
+    audioRef.current.pause();
   };
-
-  // useEffect(() => {
-  //   const initializeSound = () => {
-  //     setSound(
-  //       new Howl({
-  //         src: [playSound],
-  //         onload: () => {},
-  //       })
-  //     );
-  //   };
-
-  //   initializeSound();
-  // }, []);
-
-  // const handleClick = () => {
-  //   if (sound) {
-  //     if (!sound.playing()) {
-  //       sound.play();
-  //       setIsPlaying(true);
-  //     } else {
-  //       sound.stop();
-  //       setIsPlaying(false);
-  //     }
-  //   }
-  // };
 
   const handleClickHamburger = () => {
     setIsOpen(!isOpen);
@@ -90,20 +62,7 @@ const Header: React.FC = () => {
       {isMobile ? (
         <header className={style.header}>
           <a href={`/${lang}`}>
-            <img 
-              src="/main_assets/logo.png" 
-              alt="logo"               
-              height={47}
-            />
-            {/* <Image
-              src="/main_assets/logo-zarzma-mob.svg"
-              alt="logo-zarzma"
-              width={43}
-              height={47}
-              priority // Optional: prioritize loading this image
-              loading="eager" // Optional: load the image eagerly
-              quality={100} // Optional: specify the image quality (0-100)
-            /> */}
+            <img src="/main_assets/logo.png" alt="logo" height={47} />
           </a>
 
           <div className={`${style.header__item} ${style.header__itemCenter}`}>
@@ -130,7 +89,10 @@ const Header: React.FC = () => {
           {isOpen && (
             <div className={style.overlay}>
               <nav className={style.navbar}>
-                <div className={style.header__item} onClick={handleClick}>
+                <div
+                  className={style.header__item}
+                  onClick={isPlaying ? stopSong : playSong}
+                >
                   <Image
                     src={
                       !isPlaying
@@ -217,7 +179,10 @@ const Header: React.FC = () => {
           </a>
 
           <nav className={style.header__container}>
-            <div className={style.header__item} onClick={handleClick}>
+            <div
+              className={style.header__item}
+              onClick={isPlaying ? stopSong : playSong}
+            >
               <Image
                 src={
                   !isPlaying ? "/main_assets/play.svg" : "/main_assets/stop.svg"
