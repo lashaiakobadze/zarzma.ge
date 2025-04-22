@@ -6,13 +6,15 @@ import "@/styles/globals.css";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { MobileProvider } from "@/contexts/MobileContext";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({
+  // Component, pageProps
+}: AppProps) {
   return (
     <>
       <LanguageProvider>
         <MobileProvider>
           <Header />
-          <Component {...pageProps} />
+          {/* <Component {...pageProps} /> */}
           <Footer />
         </MobileProvider>
       </LanguageProvider>
