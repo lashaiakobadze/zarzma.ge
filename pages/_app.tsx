@@ -1,5 +1,5 @@
-import Header from "@/layout/header/Header";
-import Footer from "@/layout/footer/Footer";
+// import Header from "@/layout/header/Header";
+// import Footer from "@/layout/footer/Footer";
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
 import "@/styles/globals.css";
@@ -13,9 +13,9 @@ export default function App({
     <>
       <LanguageProvider>
         <MobileProvider>
-          <Header />
+          {/* <Header /> */}
           {/* <Component {...pageProps} /> */}
-          <Footer />
+          {/* <Footer /> */}
         </MobileProvider>
       </LanguageProvider>
       <Analytics />
