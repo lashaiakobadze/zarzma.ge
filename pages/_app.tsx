@@ -16,6 +16,8 @@ export default function App({
           {/* <Header /> */}
           {/* <Component {...pageProps} /> */}
           {/* <Footer /> */}
+                <img width="100%" height="100%" src="/1_9EBHIOzhE1XfMYoKz1JcsQ.gif" alt="" />
+
         </MobileProvider>
       </LanguageProvider>
       <Analytics />

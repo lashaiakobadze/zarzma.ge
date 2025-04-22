@@ -47,7 +47,6 @@ const HomePage: NextPage = () => {
       </Head>
 
       {/* <Home isMobile={isMobile} articles={articles} loading={loading} /> */}
-      <img width="100vw" height="100vh" src="/1_9EBHIOzhE1XfMYoKz1JcsQ.gif" alt="" />
     </>
   );
 };
