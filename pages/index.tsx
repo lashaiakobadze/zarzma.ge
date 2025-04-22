@@ -46,7 +46,7 @@ const HomePage: NextPage = () => {
         <link rel="icon" href="/main_assets/logo.png" />
       </Head>
 
-      <Home isMobile={isMobile} articles={articles} loading={loading} />
+      {/* <Home isMobile={isMobile} articles={articles} loading={loading} /> */}
     </>
   );
 };
